@@ -40,15 +40,9 @@ public class MainActivity extends AppCompatActivity {
         mondayStart = (EditText)findViewById(R.id.monday_start_time);
         mondayEnd = (EditText)findViewById(R.id.monday_end_time);
 
-        if (mondayStart.getText() == null && mondayEnd.getText() == null) {
-            try {
-                loadSchedule();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
         clearButtonListener();
         saveButtonListener();
+        closeButtonListener();
     }
 
 
@@ -101,18 +95,44 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void closeButtonListener() {
+        Button closeButton = (Button)findViewById(R.id.close_button);
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    loadSchedule();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
     // TODO: Loading the schedule into the EditText fields doesn't work yet.
     private void loadSchedule() throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(getFilesDir() + File.separator + "JTimeSched.txt")));
-        String read;
-        StringBuilder builder = new StringBuilder("");
 
-        while ((read = bufferedReader.readLine()) != null) {
-            builder.append(read);
+        // The file to be read, JTimeSched.txt (File() needs the path to its location).
+        File file = new File(getFilesDir() + File.separator, "JTimeSched.txt");
+
+        // String to hold the start and end times of the shift
+        StringBuilder startEndTimes = new StringBuilder();
+
+        // Create a buffered reader and line string to read data from JTimeSched.txt.
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String line;
+
+        // Read all data from JTimeSched.txt until the next line is null.
+        while ((line = br.readLine()) != null) {
+            startEndTimes.append(line);
+            startEndTimes.append('\n');
         }
+        br.close();
 
-        Log.d("Output", builder.toString());
-        bufferedReader.close();
+        // Set start/end times in schedule to the times from JTimeSched.txt.
+        mondayStart.setText(startEndTimes);
     }
+
+
 
 }
