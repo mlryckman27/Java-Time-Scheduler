@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // TODO: Save all the start/end times for Monday - Friday in JTimeSched.txt.
     // Save button captures and stores all schedule data in a local file.
     private void saveButtonListener() {
         Button saveButton = (Button)findViewById(R.id.save_button);
@@ -95,21 +96,22 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // TODO: Look to see if there is a system class that will close the app.
     private void closeButtonListener() {
         Button closeButton = (Button)findViewById(R.id.close_button);
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    loadSchedule();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                //try {
+                    //loadSchedule();
+                //} catch (IOException e) {
+                    //e.printStackTrace();
+                //}
             }
         });
     }
 
-    // TODO: Loading the schedule into the EditText fields doesn't work yet.
+    // TODO: load all start/end times for Monday = Sunday.
     private void loadSchedule() throws IOException {
 
         // The file to be read, JTimeSched.txt (File() needs the path to its location).
@@ -134,5 +136,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
+
+    /* TODO: General TODO List
+     * 1. Implement saving of multiple schedules, so user can view/edit schedules from different weeks.
+     * 2. Learn about onResume() method and load user's current schedule when app resumes.
+     */
 
 }
