@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText mondayEnd;
 
     // File for storing schedule information.
-   // private File scheduleFile;
+    // private File scheduleFile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
