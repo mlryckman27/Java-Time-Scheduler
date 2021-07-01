@@ -19,19 +19,21 @@ public class Day extends AppCompatActivity {
     }
 
 
-    public EditText getViewStart() {
-        return viewStart;
+    public String getViewStart() {
+        return viewStart.toString();
     }
 
-    public void setViewStart(EditText viewStart) {
-        this.viewStart = viewStart;
+    public void setViewStart(String startTime) {
+        viewStart.setText(startTime);
     }
 
-    public EditText getViewEnd() {
-        return viewEnd;
+    public String getViewEnd() {
+
+        return viewEnd.toString();
     }
 
-    public void setViewEnd(EditText viewEnd) {
-        this.viewEnd = viewEnd;
+    public void setViewEnd(String endTime) {
+        viewEnd.setText(endTime);
     }
+
 }
