@@ -26,114 +26,103 @@ import java.util.Scanner;
 public class MainActivity extends AppCompatActivity {
 
     // EditText fields for start/end times for each day.
-    private EditText mondayStart;
-    private EditText mondayEnd;
+    //private EditText mondayStart;
+    //private EditText mondayEnd;
 
-    // File for storing schedule information.
-    // private File scheduleFile;
+    // TODO: instantiate weeklySchedule with 7 days of the week.  Add these fields to activity_main.xml
+    Day monday;
+    //ScheduleFile weeklySchedule;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mondayStart = (EditText)findViewById(R.id.monday_start_time);
-        mondayEnd = (EditText)findViewById(R.id.monday_end_time);
+        //mondayStart = (EditText)findViewById(R.id.monday_start_time);
+        //mondayEnd = (EditText)findViewById(R.id.monday_end_time);
 
-        clearButtonListener();
-        saveButtonListener();
-        closeButtonListener();
+        monday = new Day(R.id.monday_start_time, R.id.monday_end_time);  // **TODO: This line does not work.
+        //weeklySchedule = new ScheduleFile(monday);
+
+        //clearButtonListener();
+        //saveButtonListener();
+        //closeButtonListener();
     }
 
 
     // Button listener methods.
 
     // Clear button clears all the start/end time entries for the current schedule.
-    private void clearButtonListener() {
-        Button clearButton = (Button)findViewById(R.id.clear_button);
-        clearButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mondayStart.setText("Start");
-                mondayEnd.setText("End");
-            }
-        });
-    }
+  //  private void clearButtonListener() {
+      //  Button clearButton = (Button)findViewById(R.id.clear_button);
+       // clearButton.setOnClickListener(new View.OnClickListener() {
+           // @Override
+            //public void onClick(View v) {
+
+                // TODO: Clear the schedule using ScheduleFile's clear() method.
+                //mondayStart.setText("Start");
+                //mondayEnd.setText("End");
+            //}
+        //});
+    //}
 
     // TODO: Save all the start/end times for Monday - Friday in JTimeSched.txt.
     // Save button captures and stores all schedule data in a local file.
-    private void saveButtonListener() {
-        Button saveButton = (Button)findViewById(R.id.save_button);
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    //private void saveButtonListener() {
+        //Button saveButton = (Button)findViewById(R.id.save_button);
+        //saveButton.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            //public void onClick(View v) {
 
-                // Start/end times for Monday's schedule.
-                String mondaySchedule = mondayStart.getText().toString() + " " + mondayEnd.getText().toString();
+                // TODO: Save the schedule using ScheduleFile's save() method.
 
-                // A writable text file to hold start/end times.
-                BufferedWriter bufferedWriter = null;
-                try {
-                    // Instantiate the bufferedWriter with a path to the file 'data/data/app_package_name/filename'.
-                    bufferedWriter = new BufferedWriter(new FileWriter(new File(getFilesDir() + File.separator + "JTimeSched.txt")));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                try {
-                    // Write the start/end times to the bufferedWriter text file.
-                    bufferedWriter.write(mondaySchedule);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                try {
-                    bufferedWriter.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
+              //  try {
+                //    weeklySchedule.save();
+                //} catch (IOException e) {
+                  //  e.printStackTrace();
+                //}
+            //}
+        //});
+    //}
 
     // TODO: Look to see if there is a system class that will close the app.
-    private void closeButtonListener() {
-        Button closeButton = (Button)findViewById(R.id.close_button);
-        closeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    //private void closeButtonListener() {
+        //Button closeButton = (Button)findViewById(R.id.close_button);
+        //closeButton.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            //public void onClick(View v) {
                 //try {
                     //loadSchedule();
                 //} catch (IOException e) {
                     //e.printStackTrace();
                 //}
-            }
-        });
-    }
+            //}
+        //});
+    //}
 
-    // TODO: load all start/end times for Monday = Sunday.
-    private void loadSchedule() throws IOException {
+    // TODO: load all start/end times for Monday - Sunday using ScheduleFile's load() method.
+    //private void loadSchedule() throws IOException {
 
         // The file to be read, JTimeSched.txt (File() needs the path to its location).
-        File file = new File(getFilesDir() + File.separator, "JTimeSched.txt");
+        //File file = new File(getFilesDir() + File.separator, "JTimeSched.txt");
 
         // String to hold the start and end times of the shift
-        StringBuilder startEndTimes = new StringBuilder();
+       // StringBuilder startEndTimes = new StringBuilder();
 
         // Create a buffered reader and line string to read data from JTimeSched.txt.
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        String line;
+       // BufferedReader br = new BufferedReader(new FileReader(file));
+        //String line;
 
         // Read all data from JTimeSched.txt until the next line is null.
-        while ((line = br.readLine()) != null) {
-            startEndTimes.append(line);
-            startEndTimes.append('\n');
-        }
-        br.close();
+        //while ((line = br.readLine()) != null) {
+           // startEndTimes.append(line);
+           // startEndTimes.append('\n');
+       // }
+       // br.close();
 
         // Set start/end times in schedule to the times from JTimeSched.txt.
-        mondayStart.setText(startEndTimes);
-    }
+        //mondayStart.setText(startEndTimes);
+   // }
 
 
 
