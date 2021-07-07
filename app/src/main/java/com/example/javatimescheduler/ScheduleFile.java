@@ -9,16 +9,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 
-public class ScheduleFile extends AppCompatActivity {
+public class ScheduleFile {
 
     // The path the the file holding the schedule times.
     private File pathToScheduleFile;
 
 
-    public ScheduleFile(Day monday) { //Day tuesday, Day wednesday, Day thursday, Day friday, Day saturday, Day sunday) {
+    public ScheduleFile() {
 
         // 'data/data/app_package_name/filename' is where JTimeSchedule.txt is stored on the Android device.
-        pathToScheduleFile = new File(getFilesDir() + File.separator + "JTimeSchedule.txt");
+        //  pass this to constructor from MainActivity. pathToScheduleFile = new File(getFilesDir() + File.separator + "JTimeSchedule.txt");
 
     }
 

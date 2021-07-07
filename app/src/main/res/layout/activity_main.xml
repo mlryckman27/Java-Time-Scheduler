@@ -7,6 +7,17 @@
     tools:context=".MainActivity">
 
 
+    <com.example.javatimescheduler.Day
+        android:id="@+id/monday_start_time_custom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        app:layout_constraintBottom_toTopOf="@+id/close_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monday_end_time" />
+
+
     <!-- Buttons: Save/Close/Clear -->
 
     <!-- Save button -->
