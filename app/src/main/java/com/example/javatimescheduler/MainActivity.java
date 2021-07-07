@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     //private EditText mondayEnd;
 
     // TODO: instantiate weeklySchedule with 7 days of the week.  Add these fields to activity_main.xml
-    Day monday;
+    //Day monday;
     //ScheduleFile weeklySchedule;
 
     @Override
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         //mondayStart = (EditText)findViewById(R.id.monday_start_time);
         //mondayEnd = (EditText)findViewById(R.id.monday_end_time);
 
-        monday = new Day(R.id.monday_start_time, R.id.monday_end_time);  // **TODO: This line does not work.
+        //monday = new Day(R.id.monday_start_time, R.id.monday_end_time);  // **TODO: This line does not work.
         //weeklySchedule = new ScheduleFile(monday);
 
         //clearButtonListener();
