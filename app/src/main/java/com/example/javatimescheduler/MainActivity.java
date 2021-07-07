@@ -6,6 +6,16 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * TODO:
+     *
+     * 1. Create create clickListeners for buttons
+     *
+     * 2. Implement save method to save the text field of each start/end View.
+     *
+     * 3. Implement load method to load the schedule into the start/end Views.
+     */
+
     Day mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart;
     Day mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd;
 
