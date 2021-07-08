@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import java.io.File;
+
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -18,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     Day mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart;
     Day mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd;
+
+    Schedule weeklySchedule;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
         wednesdayEnd = findViewById(R.id.wednesday_end_edittext);
         thursdayEnd = findViewById(R.id.thursday_end_edittext);
         fridayEnd = findViewById(R.id.friday_end_edittext);
+
+        weeklySchedule = new Schedule(mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart,
+                mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd,
+                getFilesDir() + File.separator + "schedule.txt");
+
+
     }
+
+
 
 }
