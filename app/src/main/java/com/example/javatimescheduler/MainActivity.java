@@ -3,8 +3,13 @@ package com.example.javatimescheduler;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,7 +49,22 @@ public class MainActivity extends AppCompatActivity {
                 mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd,
                 getFilesDir() + File.separator + "schedule.txt");
 
+        saveButtonListener();
+    }
 
+    // Save button captures and stores all schedule data in a local file.
+    private void saveButtonListener() {
+        Button saveButton = (Button)findViewById(R.id.save_button);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    weeklySchedule.saveSchedule();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
 
