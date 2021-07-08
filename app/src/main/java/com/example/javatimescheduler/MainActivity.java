@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 getFilesDir() + File.separator + "schedule.txt");
 
         saveButtonListener();
+        loadButtonListener();
     }
 
     // Save button captures and stores all schedule data in a local file.
@@ -63,6 +64,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     weeklySchedule.saveSchedule();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void loadButtonListener() {
+        Button loadButton = (Button)findViewById(R.id.load_button);
+        loadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    weeklySchedule.loadSchedule();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

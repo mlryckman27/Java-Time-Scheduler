@@ -1,9 +1,13 @@
 package com.example.javatimescheduler;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.Buffer;
 
 public class Schedule {
 
@@ -35,24 +39,50 @@ public class Schedule {
     public void saveSchedule() throws IOException {
         BufferedWriter bf = new BufferedWriter(new FileWriter(scheduleFile));
 
-        bf.write(monStart.getTime() + " ");
-        bf.write(tueStart.getTime() + " ");
-        bf.write(wedStart.getTime() + " ");
-        bf.write(thuStart.getTime() + " ");
-        bf.write(friStart.getTime() + " ");
+        bf.write(monStart.getTime() + "\n");
+        bf.write(tueStart.getTime() + "\n");
+        bf.write(wedStart.getTime() + "\n");
+        bf.write(thuStart.getTime() + "\n");
+        bf.write(friStart.getTime() + "\n");
 
-        bf.write("\n");
-
-        bf.write(monEnd.getTime() + " ");
-        bf.write(tueEnd.getTime() + " ");
-        bf.write(wedEnd.getTime() + " ");
-        bf.write(thuEnd.getTime() + " ");
-        bf.write(friEnd.getTime() + " ");
+        bf.write(monEnd.getTime() + "\n");
+        bf.write(tueEnd.getTime() + "\n");
+        bf.write(wedEnd.getTime() + "\n");
+        bf.write(thuEnd.getTime() + "\n");
+        bf.write(friEnd.getTime() + "\n");
 
         bf.close();
     }
 
-    //public void loadSchedule() { }
+    public void loadSchedule() throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(scheduleFile));
+
+        String monStartTime = br.readLine();
+        String tueStartTime = br.readLine();
+        String wedStartTime = br.readLine();
+        String thuStartTime = br.readLine();
+        String friStartTime = br.readLine();
+
+        String monEndTime = br.readLine();
+        String tueEndTime = br.readLine();
+        String wedEndTime = br.readLine();
+        String thuEndTime = br.readLine();
+        String friEndTime = br.readLine();
+
+        br.close();
+
+        monStart.setTime(monStartTime);
+        tueStart.setTime(tueStartTime);
+        wedStart.setTime(wedStartTime);
+        thuStart.setTime(thuStartTime);
+        friStart.setTime(friStartTime);
+
+        monEnd.setTime(monEndTime);
+        tueEnd.setTime(tueEndTime);
+        wedEnd.setTime(wedEndTime);
+        thuEnd.setTime(thuEndTime);
+        friEnd.setTime(friEndTime);
+    }
 
 
 }
