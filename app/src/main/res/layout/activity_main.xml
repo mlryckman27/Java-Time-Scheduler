@@ -7,6 +7,8 @@
     tools:context=".MainActivity">
 
 
+    <!-- Monday - Friday start/end time EditText Views. -->
+
     <com.example.javatimescheduler.Day
         android:id="@+id/monday_start_edittext"
         android:layout_width="100dp"
@@ -103,6 +105,9 @@
         app:layout_constraintStart_toEndOf="@+id/friday_start_edittext"
         app:layout_constraintTop_toBottomOf="@+id/thursday_end_edittext" />
 
+
+    <!-- Button Views for close, save, and clear. -->
+
     <Button
         android:id="@+id/save_button"
         android:layout_width="wrap_content"
@@ -112,8 +117,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-    <!-- Close button -->
     <Button
         android:id="@+id/close_button"
         android:layout_width="wrap_content"
@@ -123,7 +126,6 @@
         app:layout_constraintEnd_toStartOf="@+id/save_button"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Clear button -->
     <Button
         android:id="@+id/clear_button"
         android:layout_width="wrap_content"
@@ -132,6 +134,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/save_button" />
+
+
+    <!-- TextView for Monday - Friday to display each day's name as a label. -->
 
     <TextView
         android:id="@+id/monday_textview"
