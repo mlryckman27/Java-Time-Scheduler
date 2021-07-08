@@ -35,20 +35,24 @@ public class Schedule {
     public void saveSchedule() throws IOException {
         BufferedWriter bf = new BufferedWriter(new FileWriter(scheduleFile));
 
-        bf.write(monStart.getTime());
-        bf.write(tueStart.getTime());
-        bf.write(wedStart.getTime());
-        bf.write(thuStart.getTime());
-        bf.write(friStart.getTime());
+        bf.write(monStart.getTime() + " ");
+        bf.write(tueStart.getTime() + " ");
+        bf.write(wedStart.getTime() + " ");
+        bf.write(thuStart.getTime() + " ");
+        bf.write(friStart.getTime() + " ");
 
-        bf.write(monEnd.getTime());
-        bf.write(tueEnd.getTime());
-        bf.write(wedEnd.getTime());
-        bf.write(thuEnd.getTime());
-        bf.write(friEnd.getTime());
+        bf.write("\n");
+
+        bf.write(monEnd.getTime() + " ");
+        bf.write(tueEnd.getTime() + " ");
+        bf.write(wedEnd.getTime() + " ");
+        bf.write(thuEnd.getTime() + " ");
+        bf.write(friEnd.getTime() + " ");
 
         bf.close();
     }
+
+    //public void loadSchedule() { }
 
 
 }

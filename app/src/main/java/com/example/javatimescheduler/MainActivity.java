@@ -19,8 +19,11 @@ public class MainActivity extends AppCompatActivity {
      * 1. Create create clickListeners for buttons
      *
      * 2. Implement save method to save the text field of each start/end View.
+     *      - Adjust save method to write times to file in a more readable, organized manner.
      *
      * 3. Implement load method to load the schedule into the start/end Views.
+     *
+     * 4. Connect close Button and implement method to close app.
      */
 
     Day mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart;
