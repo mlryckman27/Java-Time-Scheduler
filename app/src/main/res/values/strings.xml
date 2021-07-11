@@ -13,4 +13,8 @@
     <string name="wednesday_label">Wed</string>
     <string name="thursday_label">Thu</string>
     <string name="friday_label">Fri</string>
+
+    <string name="start_textview_label">Start</string>
+    <string name="end_textview_label">End</string>
+    <string name="date_textview_label">Week</string>
 </resources>
