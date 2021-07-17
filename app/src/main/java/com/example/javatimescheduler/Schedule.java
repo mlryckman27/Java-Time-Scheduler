@@ -44,6 +44,8 @@ public class Schedule {
     public void saveSchedule(File pathToSchedule, String scheduleFileName) throws IOException {
         BufferedWriter bf = new BufferedWriter(new FileWriter(new File(pathToSchedule, scheduleFileName)));
 
+        bf.write(week.getText().toString());
+
         bf.write(monStart.getTime() + "\n");
         bf.write(tueStart.getTime() + "\n");
         bf.write(wedStart.getTime() + "\n");
@@ -66,6 +68,8 @@ public class Schedule {
     public void loadSchedule(File pathToSchedule, String scheduleFileName) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(new File(pathToSchedule, scheduleFileName)));
 
+        String weekDates = br.readLine();
+
         String monStartTime = br.readLine();
         String tueStartTime = br.readLine();
         String wedStartTime = br.readLine();
@@ -83,6 +87,8 @@ public class Schedule {
         String sunEndTime = br.readLine();
 
         br.close();
+
+        week.setText(weekDates);
 
         monStart.setTime(monStartTime);
         tueStart.setTime(tueStartTime);
