@@ -48,47 +48,17 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd, saturdayEnd, sundayEnd,
                 scheduleDates);
 
-        // Listen for save button to be clicked and execute appropriate methods.
-        saveButtonListener();
-    }
-
-    // Save button captures and stores all schedule data in a local file.
-
-    /**
-     * Save the schedule in a text file when save button pressed.
-     * Text file descriptor is the start/end dates for the work week.
-     */
-    private void saveButtonListener() {
-        Button saveButton = findViewById(R.id.save_button);
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    weeklySchedule.saveSchedule(getFilesDir(), weeklySchedule.getWeek().getText().toString().replace('/', '.'));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
     }
 
     /**
      *
      * @param view
      */
-    public void showPopupMenuLoad(View view) {
-        PopupMenu popupMenuLoad = new PopupMenu(this, view);
-        popupMenuLoad.setOnMenuItemClickListener(this);
-        popupMenuLoad.inflate(R.menu.popup_menu_load);
-        popupMenuLoad.show();
-    }
-
-    // TODO: require separate onMenuItemClick() ?
-    public void showPopupMenuSave(View view) {
-        PopupMenu popupMenuSave = new PopupMenu(this, view);
-        popupMenuSave.setOnMenuItemClickListener(this);
-        popupMenuSave.inflate(R.menu.popup_menu_save);
-        popupMenuSave.show();
+    public void showPopupMenu(View view) {
+        PopupMenu popup = new PopupMenu(this, view);
+        popup.setOnMenuItemClickListener(this);
+        popup.inflate(R.menu.popup_menu);
+        popup.show();
     }
 
     /**
@@ -100,17 +70,26 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     public boolean onMenuItemClick(MenuItem item) {
 
         switch(item.getItemId()) {
-            case R.id.week1_load:
-                //weeklySchedule.loadSchedule();
-            case R.id.week2_load:
-                Toast.makeText(this, "Item 2 clicked", Toast.LENGTH_SHORT).show();
-            case R.id.week3_load:
-                Toast.makeText(this, "Item 3 clicked", Toast.LENGTH_SHORT).show();
-            case R.id.week4_load:
-                Toast.makeText(this, "Item 4 clicked", Toast.LENGTH_SHORT).show();
+            case R.id.load_menu_option:
+
+            case R.id.save_menu_option:
+
             default:
                 return false;
+
         }
+//        switch(item.getItemId()) {
+//            case R.id.week1_load:
+//                //weeklySchedule.loadSchedule();
+//            case R.id.week2_load:
+//                Toast.makeText(this, "Item 2 clicked", Toast.LENGTH_SHORT).show();
+//            case R.id.week3_load:
+//                Toast.makeText(this, "Item 3 clicked", Toast.LENGTH_SHORT).show();
+//            case R.id.week4_load:
+//                Toast.makeText(this, "Item 4 clicked", Toast.LENGTH_SHORT).show();
+//            default:
+//                return false;
+//        }
 
     }
 
