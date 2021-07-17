@@ -23,7 +23,7 @@ public class Day extends androidx.appcompat.widget.AppCompatEditText {
     }
 
     private void init() {
-        time = "start";
+        time = "";
     }
 
     public void setTime(String time) {

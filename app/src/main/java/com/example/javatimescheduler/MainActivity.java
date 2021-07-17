@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     Day mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart, saturdayStart, sundayStart;
     Day mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd, saturdayEnd, sundayEnd;
 
-    EditText scheduleDates;
+    Date scheduleDates;
 
     Schedule weeklySchedule;
 
@@ -73,11 +73,10 @@ public class MainActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String scheduleName = scheduleDates.getText().toString();
-                File scheduleFile = new File(getFilesDir() + File.separator + scheduleName);
+                String pathToSchedule = getFilesDir() + File.separator + scheduleDates.getWeek();
 
                 try {
-                    weeklySchedule.saveSchedule(scheduleFile);
+                    weeklySchedule.saveSchedule(pathToSchedule);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -90,11 +89,10 @@ public class MainActivity extends AppCompatActivity {
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String scheduleName = scheduleDates.getText().toString();
-                File scheduleFile = new File(getFilesDir() + File.separator + scheduleName);
+                String pathToSchedule = getFilesDir() + File.separator + scheduleDates.getWeek();
 
                 try {
-                    weeklySchedule.loadSchedule(scheduleFile);
+                    weeklySchedule.loadSchedule(pathToSchedule);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
