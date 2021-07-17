@@ -27,11 +27,4 @@ public class Date extends androidx.appcompat.widget.AppCompatEditText {
         weekDates= "";
     }
 
-    public String getWeekDates() {
-        return super.getText().toString();
-    }
-
-    public void setWeekDates(String week) {
-        super.setText(week);
-    }
 }

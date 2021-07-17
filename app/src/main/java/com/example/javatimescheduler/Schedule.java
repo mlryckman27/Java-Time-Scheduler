@@ -16,6 +16,7 @@ public class Schedule {
 
     private Date week;
 
+
     public Schedule(Day monStart, Day tueStart, Day wedStart, Day thuStart, Day friStart, Day satStart, Day sunStart,
                     Day monEnd, Day tueEnd, Day wedEnd, Day thuEnd, Day friEnd, Day satEnd, Day sunEnd,
                     Date week) {
@@ -38,7 +39,6 @@ public class Schedule {
 
         this.week = week;
     }
-
 
 
     public void saveSchedule(File pathToSchedule, String scheduleFileName) throws IOException {
@@ -100,6 +100,7 @@ public class Schedule {
         satEnd.setTime(satEndTime);
         sunEnd.setTime(sunEndTime);
     }
+
 
     // Accessor methods
 

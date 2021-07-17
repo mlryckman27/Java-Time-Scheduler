@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
     Day mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd, saturdayEnd, sundayEnd;
     Date scheduleDates;
 
-    RecyclerView scheduleList;
-
     Schedule weeklySchedule;
 
 
@@ -67,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
         scheduleDates = findViewById(R.id.date_edittext);
 
-        scheduleList = findViewById(R.id.schedule_list_recycler);
-
         weeklySchedule = new Schedule(mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart, saturdayStart, sundayStart,
                 mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd, saturdayEnd, sundayEnd,
                 scheduleDates);
@@ -83,11 +79,8 @@ public class MainActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //String pathToSchedule = getFilesDir() + File.separator + scheduleDates.getWeek();
-                //String pathToSchedule = getFilesDir() + File.separator + "JTimeSchedule.txt";
-
                 try {
-                    weeklySchedule.saveSchedule(getFilesDir(), weeklySchedule.getWeek().toString().replace('/', '.'));
+                    weeklySchedule.saveSchedule(getFilesDir(), weeklySchedule.getWeek().getText().toString().replace('/', '.'));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
