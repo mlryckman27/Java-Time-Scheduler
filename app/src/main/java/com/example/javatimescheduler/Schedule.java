@@ -11,32 +11,35 @@ import java.nio.Buffer;
 
 public class Schedule {
 
-    private Day monStart, tueStart, wedStart, thuStart, friStart;
-    private Day monEnd, tueEnd, wedEnd, thuEnd, friEnd;
-    private File scheduleFile;
+    private Day monStart, tueStart, wedStart, thuStart, friStart, satStart, sunStart;
+    private Day monEnd, tueEnd, wedEnd, thuEnd, friEnd, satEnd, sunEnd;
+    //private File scheduleFile;
 
-    public Schedule(Day monStart, Day tueStart, Day wedStart, Day thuStart, Day friStart,
-                    Day monEnd, Day tueEnd, Day wedEnd, Day thuEnd, Day friEnd,
-                    String filePath) {
+    public Schedule(Day monStart, Day tueStart, Day wedStart, Day thuStart, Day friStart, Day satStart, Day sunStart,
+                    Day monEnd, Day tueEnd, Day wedEnd, Day thuEnd, Day friEnd, Day satEnd, Day sunEnd) {
 
         this.monStart = monStart;
         this.tueStart = tueStart;
         this.wedStart = wedStart;
         this.thuStart = thuStart;
         this.friStart = friStart;
+        this.satStart = satStart;
+        this.sunStart = sunStart;
 
         this.monEnd = monEnd;
         this.tueEnd = tueEnd;
         this.wedEnd = wedEnd;
         this.thuEnd = thuEnd;
         this.friEnd = friEnd;
+        this.satEnd = satEnd;
+        this.sunEnd = sunEnd;
 
-        scheduleFile = new File(filePath);      // filePath should be getFileDir() + File.separator + "schedule.txt"
+        //scheduleFile = new File(filePath);      // filePath should be getFileDir() + File.separator + "schedule.txt"
     }
 
 
 
-    public void saveSchedule() throws IOException {
+    public void saveSchedule(File scheduleFile) throws IOException {
         BufferedWriter bf = new BufferedWriter(new FileWriter(scheduleFile));
 
         bf.write(monStart.getTime() + "\n");
@@ -54,7 +57,7 @@ public class Schedule {
         bf.close();
     }
 
-    public void loadSchedule() throws IOException {
+    public void loadSchedule(File scheduleFile) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(scheduleFile));
 
         String monStartTime = br.readLine();
@@ -83,6 +86,5 @@ public class Schedule {
         thuEnd.setTime(thuEndTime);
         friEnd.setTime(friEndTime);
     }
-
 
 }

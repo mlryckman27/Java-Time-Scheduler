@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -32,8 +33,10 @@ public class MainActivity extends AppCompatActivity {
      *
      */
 
-    Day mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart;
-    Day mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd;
+    Day mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart, saturdayStart, sundayStart;
+    Day mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd, saturdayEnd, sundayEnd;
+
+    EditText scheduleDates;
 
     Schedule weeklySchedule;
 
@@ -47,16 +50,18 @@ public class MainActivity extends AppCompatActivity {
         wednesdayStart = findViewById(R.id.wednesday_start_edittext);
         thursdayStart = findViewById(R.id.thursday_start_edittext);
         fridayStart = findViewById(R.id.friday_start_edittext);
+        saturdayStart = findViewById(R.id.saturday_start_edittext);
+        sundayStart = findViewById(R.id.sunday_start_edittext);
 
         mondayEnd = findViewById(R.id.monday_end_edittext);
         tuesdayEnd = findViewById(R.id.tuesday_end_edittext);
         wednesdayEnd = findViewById(R.id.wednesday_end_edittext);
         thursdayEnd = findViewById(R.id.thursday_end_edittext);
         fridayEnd = findViewById(R.id.friday_end_edittext);
+        saturdayEnd = findViewById(R.id.saturday_end_edittext);
+        sundayEnd = findViewById(R.id.sunday_end_edittext);
 
-        weeklySchedule = new Schedule(mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart,
-                mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd,
-                getFilesDir() + File.separator + "schedule.txt");
+        scheduleDates = findViewById(R.id.date_edittext);
 
         saveButtonListener();
         loadButtonListener();
@@ -68,8 +73,11 @@ public class MainActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String scheduleName = scheduleDates.getText().toString();
+                File scheduleFile = new File(getFilesDir() + File.separator + scheduleName);
+
                 try {
-                    weeklySchedule.saveSchedule();
+                    weeklySchedule.saveSchedule(scheduleFile);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -82,8 +90,11 @@ public class MainActivity extends AppCompatActivity {
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String scheduleName = scheduleDates.getText().toString();
+                File scheduleFile = new File(getFilesDir() + File.separator + scheduleName);
+
                 try {
-                    weeklySchedule.loadSchedule();
+                    weeklySchedule.loadSchedule(scheduleFile);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

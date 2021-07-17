@@ -125,8 +125,51 @@
         app:layout_constraintStart_toEndOf="@+id/friday_start_edittext"
         app:layout_constraintTop_toBottomOf="@+id/thursday_end_edittext" />
 
+    <com.example.javatimescheduler.Day
+        android:id="@+id/saturday_start_edittext"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginLeft="160dp"
+        android:hint="@string/start_hint"
+        android:inputType="time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/friday_start_edittext" />
 
-    <!-- Button Views for close, save, and clear. -->
+    <com.example.javatimescheduler.Day
+        android:id="@+id/saturday_end_edittext"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:hint="@string/end_hint"
+        android:inputType="time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toEndOf="@+id/saturday_start_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/friday_end_edittext" />
+
+    <com.example.javatimescheduler.Day
+        android:id="@+id/sunday_start_edittext"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginLeft="160dp"
+        android:hint="@string/start_hint"
+        android:inputType="time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saturday_start_edittext" />
+
+    <com.example.javatimescheduler.Day
+        android:id="@+id/sunday_end_edittext"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:hint="@string/end_hint"
+        android:inputType="time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toEndOf="@+id/sunday_start_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/saturday_end_edittext" />
+
+        <!-- Buttons: close, clear, save, load, new -->
 
     <Button
         android:id="@+id/save_button"
@@ -217,6 +260,26 @@
         app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thursday_textview" />
+
+    <TextView
+        android:id="@+id/saturday_textview"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="@string/saturday_label"
+        app:layout_constraintEnd_toStartOf="@+id/saturday_start_edittext"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/friday_textview" />
+
+    <TextView
+        android:id="@+id/sunday_textview"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="@string/sunday_label"
+        app:layout_constraintEnd_toStartOf="@+id/sunday_start_edittext"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saturday_textview" />
 
     <TextView
         android:id="@+id/start_textview"
