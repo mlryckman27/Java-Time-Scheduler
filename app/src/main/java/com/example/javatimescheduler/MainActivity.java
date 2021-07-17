@@ -1,6 +1,7 @@
 package com.example.javatimescheduler;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
@@ -35,10 +36,13 @@ public class MainActivity extends AppCompatActivity {
 
     Day mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart, saturdayStart, sundayStart;
     Day mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd, saturdayEnd, sundayEnd;
-
     Date scheduleDates;
 
+    RecyclerView scheduleList;
+
     Schedule weeklySchedule;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +67,11 @@ public class MainActivity extends AppCompatActivity {
 
         scheduleDates = findViewById(R.id.date_edittext);
 
+        scheduleList = findViewById(R.id.schedule_list_recycler);
+
         weeklySchedule = new Schedule(mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart, saturdayStart, sundayStart,
-                mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd, saturdayEnd, sundayEnd);
+                mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd, saturdayEnd, sundayEnd,
+                scheduleDates);
 
         saveButtonListener();
         loadButtonListener();
@@ -80,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 //String pathToSchedule = getFilesDir() + File.separator + "JTimeSchedule.txt";
 
                 try {
-                    weeklySchedule.saveSchedule(getFilesDir(), scheduleDates.getWeek().replace('/', '-'));
+                    weeklySchedule.saveSchedule(getFilesDir(), weeklySchedule.getWeek().toString().replace('/', '.'));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -93,15 +100,7 @@ public class MainActivity extends AppCompatActivity {
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //String pathToSchedule = getFilesDir() + File.separator + scheduleDates.getWeek();
-                //String pathToSchedule = getFilesDir() + File.separator + "JTimeSchedule.txt";
 
-                try {
-                    //weeklySchedule.loadSchedule(pathToSchedule);
-                    weeklySchedule.loadSchedule(getFilesDir(), scheduleDates.getWeek().replace('/', '-'));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
     }

@@ -14,10 +14,11 @@ public class Schedule {
     private Day monStart, tueStart, wedStart, thuStart, friStart, satStart, sunStart;
     private Day monEnd, tueEnd, wedEnd, thuEnd, friEnd, satEnd, sunEnd;
 
-    //Date week;
+    private Date week;
 
     public Schedule(Day monStart, Day tueStart, Day wedStart, Day thuStart, Day friStart, Day satStart, Day sunStart,
-                    Day monEnd, Day tueEnd, Day wedEnd, Day thuEnd, Day friEnd, Day satEnd, Day sunEnd) {
+                    Day monEnd, Day tueEnd, Day wedEnd, Day thuEnd, Day friEnd, Day satEnd, Day sunEnd,
+                    Date week) {
 
         this.monStart = monStart;
         this.tueStart = tueStart;
@@ -35,7 +36,7 @@ public class Schedule {
         this.satEnd = satEnd;
         this.sunEnd = sunEnd;
 
-        //this.week = week;
+        this.week = week;
     }
 
 
@@ -100,6 +101,7 @@ public class Schedule {
         sunEnd.setTime(sunEndTime);
     }
 
+    // Accessor methods
 
     public Day getMonStart() {
         return monStart;
@@ -156,5 +158,11 @@ public class Schedule {
     public Day getSunEnd() {
         return sunEnd;
     }
+
+    public Date getWeek() {
+        return week;
+    }
+
+
 
 }

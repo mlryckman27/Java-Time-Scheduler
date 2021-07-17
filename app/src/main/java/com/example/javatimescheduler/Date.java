@@ -6,7 +6,7 @@ import android.widget.EditText;
 
 public class Date extends androidx.appcompat.widget.AppCompatEditText {
 
-    private String week;
+    private String weekDates;
 
     public Date(Context context) {
         super(context);
@@ -24,14 +24,14 @@ public class Date extends androidx.appcompat.widget.AppCompatEditText {
     }
 
     private void init() {
-        week= "";
+        weekDates= "";
     }
 
-    public String getWeek() {
+    public String getWeekDates() {
         return super.getText().toString();
     }
 
-    public void setWeek(String week) {
+    public void setWeekDates(String week) {
         super.setText(week);
     }
 }
