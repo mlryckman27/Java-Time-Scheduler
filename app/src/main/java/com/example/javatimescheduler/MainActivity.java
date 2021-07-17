@@ -63,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
         scheduleDates = findViewById(R.id.date_edittext);
 
+        weeklySchedule = new Schedule(mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart, saturdayStart, sundayStart,
+                mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd, saturdayEnd, sundayEnd);
+
         saveButtonListener();
         loadButtonListener();
     }
@@ -73,10 +76,11 @@ public class MainActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String pathToSchedule = getFilesDir() + File.separator + scheduleDates.getWeek();
+                //String pathToSchedule = getFilesDir() + File.separator + scheduleDates.getWeek();
+                //String pathToSchedule = getFilesDir() + File.separator + "JTimeSchedule.txt";
 
                 try {
-                    weeklySchedule.saveSchedule(pathToSchedule);
+                    weeklySchedule.saveSchedule(getFilesDir(), scheduleDates.getWeek().replace('/', '-'));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -89,10 +93,12 @@ public class MainActivity extends AppCompatActivity {
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String pathToSchedule = getFilesDir() + File.separator + scheduleDates.getWeek();
+                //String pathToSchedule = getFilesDir() + File.separator + scheduleDates.getWeek();
+                //String pathToSchedule = getFilesDir() + File.separator + "JTimeSchedule.txt";
 
                 try {
-                    weeklySchedule.loadSchedule(pathToSchedule);
+                    //weeklySchedule.loadSchedule(pathToSchedule);
+                    weeklySchedule.loadSchedule(getFilesDir(), scheduleDates.getWeek().replace('/', '-'));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

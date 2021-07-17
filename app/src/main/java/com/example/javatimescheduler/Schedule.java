@@ -14,11 +14,10 @@ public class Schedule {
     private Day monStart, tueStart, wedStart, thuStart, friStart, satStart, sunStart;
     private Day monEnd, tueEnd, wedEnd, thuEnd, friEnd, satEnd, sunEnd;
 
-    Date week;
+    //Date week;
 
     public Schedule(Day monStart, Day tueStart, Day wedStart, Day thuStart, Day friStart, Day satStart, Day sunStart,
-                    Day monEnd, Day tueEnd, Day wedEnd, Day thuEnd, Day friEnd, Day satEnd, Day sunEnd,
-                    Date week) {
+                    Day monEnd, Day tueEnd, Day wedEnd, Day thuEnd, Day friEnd, Day satEnd, Day sunEnd) {
 
         this.monStart = monStart;
         this.tueStart = tueStart;
@@ -36,13 +35,13 @@ public class Schedule {
         this.satEnd = satEnd;
         this.sunEnd = sunEnd;
 
-        this.week = week;
+        //this.week = week;
     }
 
 
 
-    public void saveSchedule(String pathToSchedule) throws IOException {
-        BufferedWriter bf = new BufferedWriter(new FileWriter(new File(pathToSchedule)));
+    public void saveSchedule(File pathToSchedule, String scheduleFileName) throws IOException {
+        BufferedWriter bf = new BufferedWriter(new FileWriter(new File(pathToSchedule, scheduleFileName)));
 
         bf.write(monStart.getTime() + "\n");
         bf.write(tueStart.getTime() + "\n");
@@ -63,8 +62,8 @@ public class Schedule {
         bf.close();
     }
 
-    public void loadSchedule(String pathToSchedule) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader(new File(pathToSchedule)));
+    public void loadSchedule(File pathToSchedule, String scheduleFileName) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(new File(pathToSchedule, scheduleFileName)));
 
         String monStartTime = br.readLine();
         String tueStartTime = br.readLine();
