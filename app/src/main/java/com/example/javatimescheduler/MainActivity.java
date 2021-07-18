@@ -69,10 +69,102 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     @Override
     public boolean onMenuItemClick(MenuItem item) {
 
-        switch(item.getItemId()) {
-            case R.id.load_menu_option:
+//        switch(item.getItemId()) {
+//            case R.id.week1_load:
+//                Toast.makeText(this, "week1 load clicked", Toast.LENGTH_SHORT).show();
+//                break;
+//
+//            case R.id.week2_load:
+//                Toast.makeText(this, "week2 load clicked", Toast.LENGTH_SHORT).show();
+//                break;
+//
+//            case R.id.week3_load:
+//                Toast.makeText(this, "week3 load clicked", Toast.LENGTH_SHORT).show();
+//                break;
+//
+//            case R.id.week4_load:
+//                Toast.makeText(this, "week4 load clicked", Toast.LENGTH_SHORT).show();
+//                break;
+//
+//
+//            case R.id.week1_save:
+//                Toast.makeText(this, "week1 save clicked", Toast.LENGTH_SHORT).show();
+//                break;
+//
+//            case R.id.week2_save:
+//                Toast.makeText(this, "week2 save clicked", Toast.LENGTH_SHORT).show();
+//                break;
+//
+//            case R.id.week3_save:
+//                Toast.makeText(this, "week3 save clicked", Toast.LENGTH_SHORT).show();
+//                break;
+//
+//            case R.id.week4_save:
+//                Toast.makeText(this, "week4 save clicked", Toast.LENGTH_SHORT).show();
+//                break;
+//
+//
+//            default:
+//                return false;
 
-            case R.id.save_menu_option:
+        switch(item.getItemId()) {
+            case R.id.week1_load:
+                try {
+                    weeklySchedule.loadSchedule(getFilesDir(), "week1");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case R.id.week2_load:
+                try {
+                    weeklySchedule.loadSchedule(getFilesDir(), "week2");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case R.id.week3_load:
+                try {
+                    weeklySchedule.loadSchedule(getFilesDir(), "week3");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case R.id.week4_load:
+                try {
+                    weeklySchedule.loadSchedule(getFilesDir(), "week4");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+
+            case R.id.week1_save:
+                try {
+                    weeklySchedule.saveSchedule(getFilesDir(), "week1");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case R.id.week2_save:
+                try {
+                    weeklySchedule.saveSchedule(getFilesDir(), "week2");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case R.id.week3_save:
+                try {
+                    weeklySchedule.saveSchedule(getFilesDir(), "week3");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case R.id.week4_save:
+                try {
+                    weeklySchedule.saveSchedule(getFilesDir(), "week4");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
 
             default:
                 return false;
@@ -90,8 +182,10 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 //            default:
 //                return false;
 //        }
+        return false;
 
     }
+
 
 
 }

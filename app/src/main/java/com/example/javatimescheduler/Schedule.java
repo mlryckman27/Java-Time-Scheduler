@@ -44,7 +44,7 @@ public class Schedule {
     public void saveSchedule(File pathToSchedule, String scheduleFileName) throws IOException {
         BufferedWriter bf = new BufferedWriter(new FileWriter(new File(pathToSchedule, scheduleFileName)));
 
-        bf.write(week.getText().toString());
+        bf.write(week.getText().toString() + "\n");
 
         bf.write(monStart.getTime() + "\n");
         bf.write(tueStart.getTime() + "\n");
