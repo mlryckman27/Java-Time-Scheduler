@@ -2,30 +2,30 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/load_menu_option"
-        android:title="Load Schedule">
+        android:title="@string/load_menu_label">
         <menu>
             <item android:id="@+id/week1_load"
-                android:title="Load Week 1"/>
+                android:title="@string/week1_load_label"/>
             <item android:id="@+id/week2_load"
-                android:title="Load Week 2"/>
+                android:title="@string/week2_load_label"/>
             <item android:id="@+id/week3_load"
-                android:title="Load Week 3"/>
+                android:title="@string/week3_load_label"/>
             <item android:id="@+id/week4_load"
-                android:title="Load Week 4"/>
+                android:title="@string/week4_load_label"/>
         </menu>
     </item>
 
     <item android:id="@+id/save_menu_option"
-        android:title="Save Schedule">
+        android:title="@string/save_menu_label">
         <menu>
             <item android:id="@+id/week1_save"
-                android:title="Save Week 1"/>
+                android:title="@string/week1_save_label"/>
             <item android:id="@+id/week2_save"
-                android:title="Save Week 2"/>
+                android:title="@string/week2_save_label"/>
             <item android:id="@+id/week3_save"
-                android:title="Save Week 3"/>
+                android:title="@string/week3_save_label"/>
             <item android:id="@+id/week4_save"
-                android:title="Save Week 4"/>
+                android:title="@string/week4_save_label"/>
         </menu>
     </item>
 

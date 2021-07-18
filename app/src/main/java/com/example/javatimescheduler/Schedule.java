@@ -107,6 +107,26 @@ public class Schedule {
         sunEnd.setTime(sunEndTime);
     }
 
+    public void clearSchedule() {
+        week.setText("");
+
+        monStart.setTime("");
+        tueStart.setTime("");
+        wedStart.setTime("");
+        thuStart.setTime("");
+        friStart.setTime("");
+        satStart.setTime("");
+        sunStart.setTime("");
+
+        monEnd.setTime("");
+        tueEnd.setTime("");
+        wedEnd.setTime("");
+        thuEnd.setTime("");
+        friEnd.setTime("");
+        satEnd.setTime("");
+        sunEnd.setTime("");
+    }
+
 
     // Accessor methods
 

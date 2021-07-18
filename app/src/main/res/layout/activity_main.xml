@@ -175,29 +175,22 @@
         android:id="@+id/save_load_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="showPopupMenu"
         android:text="@string/save_load_button_label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="showPopupMenu"/>
-
-    <Button
-        android:id="@+id/close_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/close_button_label"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/save_button"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/clear_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="58dp"
+        android:layout_marginLeft="58dp"
         android:text="@string/clear_button_label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/save_button" />
+        app:layout_constraintStart_toEndOf="@+id/save_load_button" />
 
 
     <!-- TextView for Monday - Friday to display each day's name as a label. -->

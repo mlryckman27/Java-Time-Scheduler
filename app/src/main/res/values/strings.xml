@@ -24,4 +24,17 @@
     <string name="start_hint">Start</string>
     <string name="end_hint">End</string>
     <string name="date_hint"><font size="10">MM/DD/YYYY-MM/DD/YYYY</font></string>
+
+    <!-- Menu items for popup menu -->
+    <string name="load_menu_label">Load Schedule</string>
+    <string name="save_menu_label">Save Schedule</string>
+    <string name="week1_load_label">Load Week 1</string>
+    <string name="week2_load_label">Load Week 2</string>
+    <string name="week3_load_label">Load Week 3</string>
+    <string name="week4_load_label">Load Week 4</string>
+    <string name="week1_save_label">Save Week 1</string>
+    <string name="week2_save_label">Save Week 2</string>
+    <string name="week3_save_label">Save Week 3</string>
+    <string name="week4_save_label">Save Week 4</string>
+
 </resources>

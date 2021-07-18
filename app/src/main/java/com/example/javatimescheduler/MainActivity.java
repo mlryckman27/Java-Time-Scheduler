@@ -5,7 +5,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.PopupMenu;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd, saturdayEnd, sundayEnd,
                 scheduleDates);
 
+        // Listen tap of clear button by user.
+        clearButtonListener();
+
     }
 
     /**
@@ -68,44 +70,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
      */
     @Override
     public boolean onMenuItemClick(MenuItem item) {
-
-//        switch(item.getItemId()) {
-//            case R.id.week1_load:
-//                Toast.makeText(this, "week1 load clicked", Toast.LENGTH_SHORT).show();
-//                break;
-//
-//            case R.id.week2_load:
-//                Toast.makeText(this, "week2 load clicked", Toast.LENGTH_SHORT).show();
-//                break;
-//
-//            case R.id.week3_load:
-//                Toast.makeText(this, "week3 load clicked", Toast.LENGTH_SHORT).show();
-//                break;
-//
-//            case R.id.week4_load:
-//                Toast.makeText(this, "week4 load clicked", Toast.LENGTH_SHORT).show();
-//                break;
-//
-//
-//            case R.id.week1_save:
-//                Toast.makeText(this, "week1 save clicked", Toast.LENGTH_SHORT).show();
-//                break;
-//
-//            case R.id.week2_save:
-//                Toast.makeText(this, "week2 save clicked", Toast.LENGTH_SHORT).show();
-//                break;
-//
-//            case R.id.week3_save:
-//                Toast.makeText(this, "week3 save clicked", Toast.LENGTH_SHORT).show();
-//                break;
-//
-//            case R.id.week4_save:
-//                Toast.makeText(this, "week4 save clicked", Toast.LENGTH_SHORT).show();
-//                break;
-//
-//
-//            default:
-//                return false;
 
         switch(item.getItemId()) {
             case R.id.week1_load:
@@ -170,22 +134,21 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 return false;
 
         }
-//        switch(item.getItemId()) {
-//            case R.id.week1_load:
-//                //weeklySchedule.loadSchedule();
-//            case R.id.week2_load:
-//                Toast.makeText(this, "Item 2 clicked", Toast.LENGTH_SHORT).show();
-//            case R.id.week3_load:
-//                Toast.makeText(this, "Item 3 clicked", Toast.LENGTH_SHORT).show();
-//            case R.id.week4_load:
-//                Toast.makeText(this, "Item 4 clicked", Toast.LENGTH_SHORT).show();
-//            default:
-//                return false;
-//        }
-        return false;
 
+        return false;
     }
 
-
+    /**
+     *
+     */
+    private void clearButtonListener() {
+        Button clearButton = findViewById(R.id.clear_button);
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                weeklySchedule.clearSchedule();
+            }
+        });
+    }
 
 }
