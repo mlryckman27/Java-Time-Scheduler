@@ -12,6 +12,19 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
+
+    /**
+     * TODO:
+     *
+     * 1. Fix view constraints so layout is viewable on any size screen without issues (e.g. buttons cut off, start/end times not aligned).
+     *
+     * 2. Update Schedule class to contain two arrays of 7 days each (7 start times, 7 ends times in separate arrays).
+     *      - constructor should take two array sof 7 days (7 start times, 7 end times)
+     *
+     * 3. Update menus to display the start/end dates of the week, rather than 'Week 1', 'Week 2', etc.
+     *
+     * 4. Create app icon.
+     */
     // A weekly schedule holding user's work times.
     private Schedule weeklySchedule;
 
