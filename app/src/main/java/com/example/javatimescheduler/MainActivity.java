@@ -10,6 +10,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
@@ -83,9 +87,65 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         popup.inflate(R.menu.popup_menu);
         popup.show();
 
-//        Menu loadLabels = popup.getMenu().getItem(0).getSubMenu();
-//        Menu saveLabels = popup.getMenu().getItem(1).getSubMenu();
-//        loadLabels.getItem(0).setTitle("Test");
+        // Popup submenus for loading and saving the schedule
+        Menu loadLabels = popup.getMenu().getItem(0).getSubMenu();
+        Menu saveLabels = popup.getMenu().getItem(1).getSubMenu();
+
+        // Set title for each submenu item to the dates associated with the filename
+        try {
+            loadLabels.getItem(0).setTitle(updatePopupMenuItem("week1"));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            loadLabels.getItem(1).setTitle(updatePopupMenuItem("week2"));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            loadLabels.getItem(2).setTitle(updatePopupMenuItem("week3"));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            loadLabels.getItem(3).setTitle(updatePopupMenuItem("week4"));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            saveLabels.getItem(0).setTitle(updatePopupMenuItem("week1"));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            saveLabels.getItem(1).setTitle(updatePopupMenuItem("week2"));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            saveLabels.getItem(2).setTitle(updatePopupMenuItem("week3"));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            saveLabels.getItem(3).setTitle(updatePopupMenuItem("week4"));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**
@@ -176,6 +236,30 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     /**
      *
+     * @param fileName
+     * @return
+     * @throws IOException
+     */
+    private String updatePopupMenuItem(String fileName) throws IOException {
+        File weekFile = new File(getFilesDir(), fileName);
+        if (!weekFile.canRead()) {
+            return "Empty";
+        }
+
+        BufferedReader br = new BufferedReader(new FileReader(weekFile));
+
+        String weekLabel = br.readLine();
+        br.close();
+
+        if (weekLabel.equals("")) {
+            weekLabel = "Empty";
+        }
+
+        return weekLabel;
+    }
+
+    /**
+     * POST: Clear week dates and each start/end time for the entire schedule.
      */
     private void clearButtonListener() {
         Button clearButton = findViewById(R.id.clear_button);
