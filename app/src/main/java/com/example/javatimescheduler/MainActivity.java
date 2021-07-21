@@ -5,6 +5,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.PopupMenu;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -52,13 +53,18 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         Day saturdayEnd = findViewById(R.id.saturday_end_edittext);
         Day sundayEnd = findViewById(R.id.sunday_end_edittext);
 
+        Day[] dayStart = {mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart, saturdayStart, sundayStart};
+        Day[] dayEnd = {mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd, saturdayEnd, sundayEnd};
+
         // Start/end dates for the work schedule
         Date scheduleDates = findViewById(R.id.date_edittext);
 
         // Instantiate a new weekly schedule with start/end times for each day and start/end dates.
-        weeklySchedule = new Schedule(mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart, saturdayStart, sundayStart,
-                mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd, saturdayEnd, sundayEnd,
-                scheduleDates);
+        weeklySchedule = new Schedule(dayStart, dayEnd, scheduleDates);
+
+//        weeklySchedule = new Schedule(mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart, saturdayStart, sundayStart,
+//                mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd, saturdayEnd, sundayEnd,
+//                scheduleDates);
 
         // Listen tap of clear button by user.
         clearButtonListener();
@@ -88,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             case R.id.week1_load:
                 try {
                     weeklySchedule.loadSchedule(getFilesDir(), "week1");
+                    Toast.makeText(this, "Week 1 schedule loaded", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -95,6 +102,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             case R.id.week2_load:
                 try {
                     weeklySchedule.loadSchedule(getFilesDir(), "week2");
+                    Toast.makeText(this, "Week 2 schedule loaded", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -102,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             case R.id.week3_load:
                 try {
                     weeklySchedule.loadSchedule(getFilesDir(), "week3");
+                    Toast.makeText(this, "Week 3 schedule loaded", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -109,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             case R.id.week4_load:
                 try {
                     weeklySchedule.loadSchedule(getFilesDir(), "week4");
+                    Toast.makeText(this, "Week 4 schedule loaded", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -117,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             case R.id.week1_save:
                 try {
                     weeklySchedule.saveSchedule(getFilesDir(), "week1");
+                    Toast.makeText(this, "Week 1 schedule saved", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -124,6 +135,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             case R.id.week2_save:
                 try {
                     weeklySchedule.saveSchedule(getFilesDir(), "week2");
+                    Toast.makeText(this, "Week 2 schedule saved", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -131,6 +143,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             case R.id.week3_save:
                 try {
                     weeklySchedule.saveSchedule(getFilesDir(), "week3");
+                    Toast.makeText(this, "Week 3 schedule saved", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -138,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             case R.id.week4_save:
                 try {
                     weeklySchedule.saveSchedule(getFilesDir(), "week4");
+                    Toast.makeText(this, "Week 4 schedule saved", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -160,6 +174,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View v) {
                 weeklySchedule.clearSchedule();
+                //Toast.makeText(v.getContext(), "Schedule cleared", Toast.LENGTH_SHORT).show();
             }
         });
     }

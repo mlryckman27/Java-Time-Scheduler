@@ -14,53 +14,53 @@ public class Schedule {
     private Day monStart, tueStart, wedStart, thuStart, friStart, satStart, sunStart;
     private Day monEnd, tueEnd, wedEnd, thuEnd, friEnd, satEnd, sunEnd;
 
+    private Day[] startTimes;               // Start times for 7 days of the week
+    private Day[] endTimes;                 // End times for 7 days of the week
+
     private Date week;
 
 
-    public Schedule(Day monStart, Day tueStart, Day wedStart, Day thuStart, Day friStart, Day satStart, Day sunStart,
-                    Day monEnd, Day tueEnd, Day wedEnd, Day thuEnd, Day friEnd, Day satEnd, Day sunEnd,
-                    Date week) {
-
-        this.monStart = monStart;
-        this.tueStart = tueStart;
-        this.wedStart = wedStart;
-        this.thuStart = thuStart;
-        this.friStart = friStart;
-        this.satStart = satStart;
-        this.sunStart = sunStart;
-
-        this.monEnd = monEnd;
-        this.tueEnd = tueEnd;
-        this.wedEnd = wedEnd;
-        this.thuEnd = thuEnd;
-        this.friEnd = friEnd;
-        this.satEnd = satEnd;
-        this.sunEnd = sunEnd;
-
+    public Schedule(Day[] startTimes, Day[] endTimes, Date week) {
+        this.startTimes = startTimes;
+        this.endTimes = endTimes;
         this.week = week;
     }
 
+//    public Schedule(Day monStart, Day tueStart, Day wedStart, Day thuStart, Day friStart, Day satStart, Day sunStart,
+//                    Day monEnd, Day tueEnd, Day wedEnd, Day thuEnd, Day friEnd, Day satEnd, Day sunEnd,
+//                    Date week) {
+//
+//        this.monStart = monStart;
+//        this.tueStart = tueStart;
+//        this.wedStart = wedStart;
+//        this.thuStart = thuStart;
+//        this.friStart = friStart;
+//        this.satStart = satStart;
+//        this.sunStart = sunStart;
+//
+//        this.monEnd = monEnd;
+//        this.tueEnd = tueEnd;
+//        this.wedEnd = wedEnd;
+//        this.thuEnd = thuEnd;
+//        this.friEnd = friEnd;
+//        this.satEnd = satEnd;
+//        this.sunEnd = sunEnd;
+//
+//        this.week = week;
+//    }
 
     public void saveSchedule(File pathToSchedule, String scheduleFileName) throws IOException {
         BufferedWriter bf = new BufferedWriter(new FileWriter(new File(pathToSchedule, scheduleFileName)));
 
-        bf.write(week.getText().toString() + "\n");
+        bf.write(week.getWeekDates() + "\n");
 
-        bf.write(monStart.getTime() + "\n");
-        bf.write(tueStart.getTime() + "\n");
-        bf.write(wedStart.getTime() + "\n");
-        bf.write(thuStart.getTime() + "\n");
-        bf.write(friStart.getTime() + "\n");
-        bf.write(satStart.getTime() + "\n");
-        bf.write(sunStart.getTime() + "\n");
+        for (Day dayStart : startTimes) {
+            bf.write(dayStart.getTime() + "\n");
+        }
 
-        bf.write(monEnd.getTime() + "\n");
-        bf.write(tueEnd.getTime() + "\n");
-        bf.write(wedEnd.getTime() + "\n");
-        bf.write(thuEnd.getTime() + "\n");
-        bf.write(friEnd.getTime() + "\n");
-        bf.write(satEnd.getTime() + "\n");
-        bf.write(sunEnd.getTime() + "\n");
+        for (Day dayEnd : endTimes) {
+            bf.write(dayEnd.getTime() + "\n");
+        }
 
         bf.close();
     }
@@ -70,126 +70,126 @@ public class Schedule {
 
         String weekDates = br.readLine();
 
-        String monStartTime = br.readLine();
-        String tueStartTime = br.readLine();
-        String wedStartTime = br.readLine();
-        String thuStartTime = br.readLine();
-        String friStartTime = br.readLine();
-        String satStartTime = br.readLine();
-        String sunStartTime = br.readLine();
+        String[] start = new String[7];
+        String[] end = new String[7];
 
-        String monEndTime = br.readLine();
-        String tueEndTime = br.readLine();
-        String wedEndTime = br.readLine();
-        String thuEndTime = br.readLine();
-        String friEndTime = br.readLine();
-        String satEndTime = br.readLine();
-        String sunEndTime = br.readLine();
+        for (int i = 0; i < startTimes.length; i++) {
+            start[i] = br.readLine();
+        }
+
+        for (int i = 0; i < endTimes.length; i++) {
+            end[i] = br.readLine();
+        }
 
         br.close();
 
-        week.setText(weekDates);
+        week.setWeekDates(weekDates);
 
-        monStart.setTime(monStartTime);
-        tueStart.setTime(tueStartTime);
-        wedStart.setTime(wedStartTime);
-        thuStart.setTime(thuStartTime);
-        friStart.setTime(friStartTime);
-        satStart.setTime(satStartTime);
-        sunStart.setTime(sunStartTime);
+        for (int i = 0; i < startTimes.length; i++) {
+            startTimes[i].setTime(start[i]);
+        }
 
-        monEnd.setTime(monEndTime);
-        tueEnd.setTime(tueEndTime);
-        wedEnd.setTime(wedEndTime);
-        thuEnd.setTime(thuEndTime);
-        friEnd.setTime(friEndTime);
-        satEnd.setTime(satEndTime);
-        sunEnd.setTime(sunEndTime);
+        for (int i = 0; i < endTimes.length; i++) {
+            endTimes[i].setTime(end[i]);
+        }
     }
 
     public void clearSchedule() {
         week.setText("");
 
-        monStart.setTime("");
-        tueStart.setTime("");
-        wedStart.setTime("");
-        thuStart.setTime("");
-        friStart.setTime("");
-        satStart.setTime("");
-        sunStart.setTime("");
+        for (Day dayStart : startTimes) {
+            dayStart.setTime("");
+        }
 
-        monEnd.setTime("");
-        tueEnd.setTime("");
-        wedEnd.setTime("");
-        thuEnd.setTime("");
-        friEnd.setTime("");
-        satEnd.setTime("");
-        sunEnd.setTime("");
+        for (Day dayEnd : endTimes) {
+            dayEnd.setTime("");
+        }
     }
 
+//    public void saveSchedule(File pathToSchedule, String scheduleFileName) throws IOException {
+//        BufferedWriter bf = new BufferedWriter(new FileWriter(new File(pathToSchedule, scheduleFileName)));
+//
+//        bf.write(week.getText().toString() + "\n");
+//
+//        bf.write(monStart.getTime() + "\n");
+//        bf.write(tueStart.getTime() + "\n");
+//        bf.write(wedStart.getTime() + "\n");
+//        bf.write(thuStart.getTime() + "\n");
+//        bf.write(friStart.getTime() + "\n");
+//        bf.write(satStart.getTime() + "\n");
+//        bf.write(sunStart.getTime() + "\n");
+//
+//        bf.write(monEnd.getTime() + "\n");
+//        bf.write(tueEnd.getTime() + "\n");
+//        bf.write(wedEnd.getTime() + "\n");
+//        bf.write(thuEnd.getTime() + "\n");
+//        bf.write(friEnd.getTime() + "\n");
+//        bf.write(satEnd.getTime() + "\n");
+//        bf.write(sunEnd.getTime() + "\n");
+//
+//        bf.close();
+//    }
 
-    // Accessor methods
-
-    public Day getMonStart() {
-        return monStart;
-    }
-
-    public Day getTueStart() {
-        return tueStart;
-    }
-
-    public Day getWedStart() {
-        return wedStart;
-    }
-
-    public Day getThuStart() {
-        return thuStart;
-    }
-
-    public Day getFriStart() {
-        return friStart;
-    }
-
-    public Day getSatStart() {
-        return satStart;
-    }
-
-    public Day getSunStart() {
-        return sunStart;
-    }
-
-    public Day getMonEnd() {
-        return monEnd;
-    }
-
-    public Day getTueEnd() {
-        return tueEnd;
-    }
-
-    public Day getWedEnd() {
-        return wedEnd;
-    }
-
-    public Day getThuEnd() {
-        return thuEnd;
-    }
-
-    public Day getFriEnd() {
-        return friEnd;
-    }
-
-    public Day getSatEnd() {
-        return satEnd;
-    }
-
-    public Day getSunEnd() {
-        return sunEnd;
-    }
-
-    public Date getWeek() {
-        return week;
-    }
-
-
+//    public void loadSchedule(File pathToSchedule, String scheduleFileName) throws IOException {
+//        BufferedReader br = new BufferedReader(new FileReader(new File(pathToSchedule, scheduleFileName)));
+//
+//        String weekDates = br.readLine();
+//
+//        String monStartTime = br.readLine();
+//        String tueStartTime = br.readLine();
+//        String wedStartTime = br.readLine();
+//        String thuStartTime = br.readLine();
+//        String friStartTime = br.readLine();
+//        String satStartTime = br.readLine();
+//        String sunStartTime = br.readLine();
+//
+//        String monEndTime = br.readLine();
+//        String tueEndTime = br.readLine();
+//        String wedEndTime = br.readLine();
+//        String thuEndTime = br.readLine();
+//        String friEndTime = br.readLine();
+//        String satEndTime = br.readLine();
+//        String sunEndTime = br.readLine();
+//
+//        br.close();
+//
+//        week.setText(weekDates);
+//
+//        monStart.setTime(monStartTime);
+//        tueStart.setTime(tueStartTime);
+//        wedStart.setTime(wedStartTime);
+//        thuStart.setTime(thuStartTime);
+//        friStart.setTime(friStartTime);
+//        satStart.setTime(satStartTime);
+//        sunStart.setTime(sunStartTime);
+//
+//        monEnd.setTime(monEndTime);
+//        tueEnd.setTime(tueEndTime);
+//        wedEnd.setTime(wedEndTime);
+//        thuEnd.setTime(thuEndTime);
+//        friEnd.setTime(friEndTime);
+//        satEnd.setTime(satEndTime);
+//        sunEnd.setTime(sunEndTime);
+//    }
+//
+//    public void clearSchedule() {
+//        week.setText("");
+//
+//        monStart.setTime("");
+//        tueStart.setTime("");
+//        wedStart.setTime("");
+//        thuStart.setTime("");
+//        friStart.setTime("");
+//        satStart.setTime("");
+//        sunStart.setTime("");
+//
+//        monEnd.setTime("");
+//        tueEnd.setTime("");
+//        wedEnd.setTime("");
+//        thuEnd.setTime("");
+//        friEnd.setTime("");
+//        satEnd.setTime("");
+//        sunEnd.setTime("");
+//    }
 
 }
