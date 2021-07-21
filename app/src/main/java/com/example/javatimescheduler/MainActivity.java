@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View v) {
                 weeklySchedule.clearSchedule();
-                //Toast.makeText(v.getContext(), "Schedule cleared", Toast.LENGTH_SHORT).show();
+                Toast.makeText(v.getContext(), "Schedule cleared", Toast.LENGTH_SHORT).show();
             }
         });
     }
