@@ -1,6 +1,7 @@
 package com.example.javatimescheduler;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -19,16 +20,17 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
      *
      * 1. Fix view constraints so layout is viewable on any size screen without issues (e.g. buttons cut off, start/end times not aligned).
      *
-     * 2. Update Schedule class to contain two arrays of 7 days each (7 start times, 7 ends times in separate arrays).
-     *      - constructor should take two array sof 7 days (7 start times, 7 end times)
+     * 2. Update menus to display the start/end dates of the week, rather than 'Week 1', 'Week 2', etc.
      *
-     * 3. Update menus to display the start/end dates of the week, rather than 'Week 1', 'Week 2', etc.
-     *
-     * 4. Create app icon.
+     * 3. Create app icon.
      */
+
+
     // A weekly schedule holding user's work times.
     private Schedule weeklySchedule;
 
+    // Array holding the dates for each schedule to show in popup menu
+    //private String[] loadSaveDateLabels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,14 +64,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         // Instantiate a new weekly schedule with start/end times for each day and start/end dates.
         weeklySchedule = new Schedule(dayStart, dayEnd, scheduleDates);
 
-//        weeklySchedule = new Schedule(mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart, saturdayStart, sundayStart,
-//                mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd, saturdayEnd, sundayEnd,
-//                scheduleDates);
+        //loadSaveDateLabels = new String[4];
 
         // Listen tap of clear button by user.
         clearButtonListener();
 
     }
+
+
 
     /**
      *
@@ -80,6 +82,10 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         popup.setOnMenuItemClickListener(this);
         popup.inflate(R.menu.popup_menu);
         popup.show();
+
+//        Menu loadLabels = popup.getMenu().getItem(0).getSubMenu();
+//        Menu saveLabels = popup.getMenu().getItem(1).getSubMenu();
+//        loadLabels.getItem(0).setTitle("Test");
     }
 
     /**
@@ -91,6 +97,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     public boolean onMenuItemClick(MenuItem item) {
 
         switch(item.getItemId()) {
+
+            // Load schedule submenu cases
             case R.id.week1_load:
                 try {
                     weeklySchedule.loadSchedule(getFilesDir(), "week1");
@@ -124,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 }
                 break;
 
+            // Save schedule submenu cases
             case R.id.week1_save:
                 try {
                     weeklySchedule.saveSchedule(getFilesDir(), "week1");
