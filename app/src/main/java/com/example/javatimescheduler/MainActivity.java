@@ -33,9 +33,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     // A weekly schedule holding user's work times.
     private Schedule weeklySchedule;
 
-    // Array holding the dates for each schedule to show in popup menu
-    //private String[] loadSaveDateLabels;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,14 +65,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         // Instantiate a new weekly schedule with start/end times for each day and start/end dates.
         weeklySchedule = new Schedule(dayStart, dayEnd, scheduleDates);
 
-        //loadSaveDateLabels = new String[4];
-
         // Listen tap of clear button by user.
         clearButtonListener();
-
     }
-
-
 
     /**
      *

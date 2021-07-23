@@ -11,9 +11,6 @@ import java.nio.Buffer;
 
 public class Schedule {
 
-    private Day monStart, tueStart, wedStart, thuStart, friStart, satStart, sunStart;
-    private Day monEnd, tueEnd, wedEnd, thuEnd, friEnd, satEnd, sunEnd;
-
     private Day[] startTimes;               // Start times for 7 days of the week
     private Day[] endTimes;                 // End times for 7 days of the week
 
@@ -84,7 +81,7 @@ public class Schedule {
     }
 
     public String getWeek() {
-        return week.getText().toString();
+        return week.getWeekDates();
     }
 
 }
