@@ -70,7 +70,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.394"
         app:layout_constraintStart_toEndOf="@+id/wednesday_start_edittext"
-        app:layout_constraintTop_toBottomOf="@+id/tuesday_end_edittext" />
+        app:layout_constraintTop_toBottomOf="@+id/tuesday_end_edittext"
+        android:layout_marginRight="24dp" />
 
     <com.example.javatimescheduler.Day
         android:id="@+id/thursday_start_edittext"
@@ -183,7 +184,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/save_load_button" />
+        app:layout_constraintStart_toEndOf="@+id/save_load_button"
+        android:layout_marginLeft="58dp" />
 
     <TextView
         android:id="@+id/monday_textview"
@@ -193,7 +195,8 @@
         android:layout_marginTop="104dp"
         android:text="@string/monday_label"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp" />
 
     <TextView
         android:id="@+id/tuesday_textview"
@@ -202,7 +205,8 @@
         android:layout_marginStart="16dp"
         android:text="@string/tuesday_label"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/monday_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/monday_textview"
+        android:layout_marginLeft="16dp" />
 
     <TextView
         android:id="@+id/wednesday_textview"
@@ -211,7 +215,8 @@
         android:layout_marginStart="16dp"
         android:text="@string/wednesday_label"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tuesday_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/tuesday_textview"
+        android:layout_marginLeft="16dp" />
 
     <TextView
         android:id="@+id/thursday_textview"
@@ -220,7 +225,8 @@
         android:layout_marginStart="16dp"
         android:text="@string/thursday_label"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wednesday_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/wednesday_textview"
+        android:layout_marginLeft="16dp" />
 
     <TextView
         android:id="@+id/friday_textview"
@@ -229,7 +235,8 @@
         android:layout_marginStart="16dp"
         android:text="@string/friday_label"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/thursday_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/thursday_textview"
+        android:layout_marginLeft="16dp" />
 
     <TextView
         android:id="@+id/saturday_textview"
@@ -238,7 +245,8 @@
         android:layout_marginStart="16dp"
         android:text="@string/saturday_label"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/friday_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/friday_textview"
+        android:layout_marginLeft="16dp" />
 
     <TextView
         android:id="@+id/sunday_textview"
@@ -249,7 +257,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/saturday_textview"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginLeft="16dp" />
 
     <TextView
         android:id="@+id/date_textview"
@@ -260,7 +269,8 @@
         app:layout_constraintBottom_toTopOf="@+id/monday_textview"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintVertical_bias="0.39"
+        android:layout_marginLeft="56dp" />
 
     <com.example.javatimescheduler.Date
         android:id="@+id/date_edittext"
@@ -277,5 +287,13 @@
         app:layout_constraintStart_toEndOf="@+id/date_textview"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="663dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
