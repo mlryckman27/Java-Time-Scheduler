@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
      * TODO:
      *
      * 1. Fix view constraints so layout is viewable on any size screen without issues (e.g. buttons cut off, start/end times not aligned).
+     *      - Clear button doesn't appear if all three buttons are aligned horizontally at the bottom of the screen.
+     *
+     * 2. Add toasts to deleteButtonListener() method to tell user which schedule has been deleted.
      *
      */
 
