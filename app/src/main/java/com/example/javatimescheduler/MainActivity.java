@@ -64,7 +64,15 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         // Listen tap of clear button by user.
         clearButtonListener();
+
+        // Listen for tap of delete button by user.
+        try {
+            deleteButtonListener();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
+
 
     /**
      *
@@ -257,6 +265,63 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             public void onClick(View v) {
                 weeklySchedule.clearSchedule();
                 Toast.makeText(v.getContext(), "Schedule cleared", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void deleteButtonListener() throws FileNotFoundException{
+        Button deleteButton = findViewById(R.id.delete_button);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    BufferedReader week1File = new BufferedReader(new FileReader(new File(getFilesDir(), "week1")));
+                    if (week1File.readLine().equals(weeklySchedule.getWeek())) {
+                        weeklySchedule.clearSchedule();
+                        weeklySchedule.saveSchedule(getFilesDir(), "week1");
+                    }
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    BufferedReader week2File = new BufferedReader(new FileReader(new File(getFilesDir(), "week2")));
+                    if (week2File.readLine().equals(weeklySchedule.getWeek())) {
+                        weeklySchedule.clearSchedule();
+                        weeklySchedule.saveSchedule(getFilesDir(), "week2");
+                    }
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    BufferedReader week3File = new BufferedReader(new FileReader(new File(getFilesDir(), "week3")));
+                    if (week3File.readLine().equals(weeklySchedule.getWeek())) {
+                        weeklySchedule.clearSchedule();
+                        weeklySchedule.saveSchedule(getFilesDir(), "week3");
+                    }
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    BufferedReader week4File = new BufferedReader(new FileReader(new File(getFilesDir(), "week4")));
+                    if (week4File.readLine().equals(weeklySchedule.getWeek())) {
+                        weeklySchedule.clearSchedule();
+                        weeklySchedule.saveSchedule(getFilesDir(), "week4");
+                    }
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

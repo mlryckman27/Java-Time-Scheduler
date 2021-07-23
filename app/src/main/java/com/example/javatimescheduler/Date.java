@@ -2,7 +2,6 @@ package com.example.javatimescheduler;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.EditText;
 
 public class Date extends androidx.appcompat.widget.AppCompatEditText {
 
