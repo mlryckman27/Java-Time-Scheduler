@@ -18,6 +18,7 @@
     <string name="start_textview_label">Start</string>
     <string name="end_textview_label">End</string>
     <string name="date_textview_label">Week</string>
+    <string name="timedash_label"><font size="16">-</font></string>
 
     <!-- Hints for start/end times and week dates -->
     <string name="start_hint">Start</string>
