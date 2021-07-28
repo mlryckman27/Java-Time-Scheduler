@@ -7,265 +7,11 @@
     tools:context=".MainActivity">
 
 
-    <!-- Monday - Friday start/end time EditText Views. -->
-
-    <com.example.javatimescheduler.Day
-        android:id="@+id/monday_start_edittext"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="104dp"
-        android:hint="@string/start_hint"
-        android:inputType="time"
-        app:layout_constraintStart_toEndOf="@+id/monday_textview"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.example.javatimescheduler.Day
-        android:id="@+id/monday_end_edittext"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="104dp"
-        android:hint="@string/end_hint"
-        android:inputType="time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.294"
-        app:layout_constraintStart_toEndOf="@+id/monday_start_edittext"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.example.javatimescheduler.Day
-        android:id="@+id/tuesday_start_edittext"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:hint="@string/start_hint"
-        android:inputType="time"
-        app:layout_constraintStart_toEndOf="@+id/tuesday_textview"
-        app:layout_constraintTop_toBottomOf="@+id/monday_start_edittext" />
-
-    <com.example.javatimescheduler.Day
-        android:id="@+id/tuesday_end_edittext"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:inputType="time"
-        android:hint="@string/end_hint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.294"
-        app:layout_constraintStart_toEndOf="@+id/tuesday_start_edittext"
-        app:layout_constraintTop_toBottomOf="@+id/monday_end_edittext" />
-
-    <com.example.javatimescheduler.Day
-        android:id="@+id/wednesday_start_edittext"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:hint="@string/start_hint"
-        android:inputType="time"
-        app:layout_constraintStart_toEndOf="@+id/wednesday_textview"
-        app:layout_constraintTop_toBottomOf="@+id/tuesday_start_edittext" />
-
-    <com.example.javatimescheduler.Day
-        android:id="@+id/wednesday_end_edittext"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="24dp"
-        android:hint="@string/end_hint"
-        android:inputType="time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.394"
-        app:layout_constraintStart_toEndOf="@+id/wednesday_start_edittext"
-        app:layout_constraintTop_toBottomOf="@+id/tuesday_end_edittext" />
-
-    <com.example.javatimescheduler.Day
-        android:id="@+id/thursday_start_edittext"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:hint="@string/start_hint"
-        android:inputType="time"
-        app:layout_constraintStart_toEndOf="@+id/thursday_textview"
-        app:layout_constraintTop_toBottomOf="@+id/wednesday_start_edittext" />
-
-    <com.example.javatimescheduler.Day
-        android:id="@+id/thursday_end_edittext"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:inputType="time"
-        android:hint="@string/end_hint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.294"
-        app:layout_constraintStart_toEndOf="@+id/thursday_start_edittext"
-        app:layout_constraintTop_toBottomOf="@+id/wednesday_end_edittext" />
-
-    <com.example.javatimescheduler.Day
-        android:id="@+id/friday_start_edittext"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:hint="@string/start_hint"
-        android:inputType="time"
-        app:layout_constraintStart_toEndOf="@+id/friday_textview"
-        app:layout_constraintTop_toBottomOf="@+id/thursday_start_edittext" />
-
-    <com.example.javatimescheduler.Day
-        android:id="@+id/friday_end_edittext"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:inputType="time"
-        android:hint="@string/end_hint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.294"
-        app:layout_constraintStart_toEndOf="@+id/friday_start_edittext"
-        app:layout_constraintTop_toBottomOf="@+id/thursday_end_edittext" />
-
-    <com.example.javatimescheduler.Day
-        android:id="@+id/saturday_start_edittext"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:hint="@string/start_hint"
-        android:inputType="time"
-        app:layout_constraintStart_toEndOf="@+id/saturday_textview"
-        app:layout_constraintTop_toBottomOf="@+id/friday_start_edittext" />
-
-    <com.example.javatimescheduler.Day
-        android:id="@+id/saturday_end_edittext"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:hint="@string/end_hint"
-        android:inputType="time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.294"
-        app:layout_constraintStart_toEndOf="@+id/saturday_start_edittext"
-        app:layout_constraintTop_toBottomOf="@+id/friday_end_edittext" />
-
-    <com.example.javatimescheduler.Day
-        android:id="@+id/sunday_start_edittext"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:hint="@string/start_hint"
-        android:inputType="time"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/sunday_textview"
-        app:layout_constraintTop_toBottomOf="@+id/saturday_start_edittext"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <!-- Buttons: close, clear, save, load, new -->
-
-    <com.example.javatimescheduler.Day
-        android:id="@+id/sunday_end_edittext"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:hint="@string/end_hint"
-        android:inputType="time"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.294"
-        app:layout_constraintStart_toEndOf="@+id/sunday_start_edittext"
-        app:layout_constraintTop_toBottomOf="@+id/saturday_end_edittext"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-    <!-- TextView for Monday - Friday to display each day's name as a label. -->
-
-    <Button
-        android:id="@+id/save_load_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:onClick="showPopupMenu"
-        android:text="@string/save_load_button_label"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.277"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/clear_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="58dp"
-        android:layout_marginBottom="24dp"
-        android:text="@string/clear_button_label"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/save_load_button" />
-
-    <TextView
-        android:id="@+id/monday_textview"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="104dp"
-        android:text="@string/monday_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tuesday_textview"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:text="@string/tuesday_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/monday_textview" />
-
-    <TextView
-        android:id="@+id/wednesday_textview"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:text="@string/wednesday_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tuesday_textview" />
-
-    <TextView
-        android:id="@+id/thursday_textview"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:text="@string/thursday_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wednesday_textview" />
-
-    <TextView
-        android:id="@+id/friday_textview"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:text="@string/friday_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/thursday_textview" />
-
-    <TextView
-        android:id="@+id/saturday_textview"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:text="@string/saturday_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/friday_textview" />
-
-    <TextView
-        android:id="@+id/sunday_textview"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:text="@string/sunday_label"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/saturday_textview"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/date_textview"
-        android:layout_width="60dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="56dp"
-        android:text="@string/date_textview_label"
-        app:layout_constraintBottom_toTopOf="@+id/monday_textview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
-
+    <!-- Date EditText View to hold the dates for current schedule. -->
     <com.example.javatimescheduler.Date
         android:id="@+id/date_edittext"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40sp"
         android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="@string/date_hint"
@@ -277,5 +23,289 @@
         app:layout_constraintStart_toEndOf="@+id/date_textview"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <!-- Monday - Sunday start/end time EditText Views. -->
+    <com.example.javatimescheduler.Day
+        android:id="@+id/monday_start_edittext"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:layout_marginTop="104dp"
+        android:hint="@string/start_hint"
+        android:inputType="time"
+        app:layout_constraintStart_toEndOf="@+id/monday_textview"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.javatimescheduler.Day
+        android:id="@+id/monday_end_edittext"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:layout_marginTop="104dp"
+        android:hint="@string/end_hint"
+        android:inputType="time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toEndOf="@+id/monday_start_edittext"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.javatimescheduler.Day
+        android:id="@+id/tuesday_start_edittext"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:hint="@string/start_hint"
+        android:inputType="time"
+        app:layout_constraintStart_toEndOf="@+id/tuesday_textview"
+        app:layout_constraintTop_toBottomOf="@+id/monday_start_edittext" />
+
+    <com.example.javatimescheduler.Day
+        android:id="@+id/tuesday_end_edittext"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:inputType="time"
+        android:hint="@string/end_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toEndOf="@+id/tuesday_start_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/monday_end_edittext" />
+
+    <com.example.javatimescheduler.Day
+        android:id="@+id/wednesday_start_edittext"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:hint="@string/start_hint"
+        android:inputType="time"
+        app:layout_constraintStart_toEndOf="@+id/wednesday_textview"
+        app:layout_constraintTop_toBottomOf="@+id/tuesday_start_edittext" />
+
+    <com.example.javatimescheduler.Day
+        android:id="@+id/wednesday_end_edittext"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:hint="@string/end_hint"
+        android:inputType="time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toEndOf="@+id/wednesday_start_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/tuesday_end_edittext" />
+
+    <com.example.javatimescheduler.Day
+        android:id="@+id/thursday_start_edittext"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:hint="@string/start_hint"
+        android:inputType="time"
+        app:layout_constraintStart_toEndOf="@+id/thursday_textview"
+        app:layout_constraintTop_toBottomOf="@+id/wednesday_start_edittext" />
+
+    <com.example.javatimescheduler.Day
+        android:id="@+id/thursday_end_edittext"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:inputType="time"
+        android:hint="@string/end_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toEndOf="@+id/thursday_start_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/wednesday_end_edittext" />
+
+    <com.example.javatimescheduler.Day
+        android:id="@+id/friday_start_edittext"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:hint="@string/start_hint"
+        android:inputType="time"
+        app:layout_constraintStart_toEndOf="@+id/friday_textview"
+        app:layout_constraintTop_toBottomOf="@+id/thursday_start_edittext" />
+
+    <com.example.javatimescheduler.Day
+        android:id="@+id/friday_end_edittext"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:inputType="time"
+        android:hint="@string/end_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toEndOf="@+id/friday_start_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/thursday_end_edittext" />
+
+    <com.example.javatimescheduler.Day
+        android:id="@+id/saturday_start_edittext"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:hint="@string/start_hint"
+        android:inputType="time"
+        app:layout_constraintStart_toEndOf="@+id/saturday_textview"
+        app:layout_constraintTop_toBottomOf="@+id/friday_start_edittext" />
+
+    <com.example.javatimescheduler.Day
+        android:id="@+id/saturday_end_edittext"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:hint="@string/end_hint"
+        android:inputType="time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toEndOf="@+id/saturday_start_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/friday_end_edittext" />
+
+    <com.example.javatimescheduler.Day
+        android:id="@+id/sunday_start_edittext"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:hint="@string/start_hint"
+        android:inputType="time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sunday_textview"
+        app:layout_constraintTop_toBottomOf="@+id/saturday_start_edittext"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.example.javatimescheduler.Day
+        android:id="@+id/sunday_end_edittext"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:hint="@string/end_hint"
+        android:inputType="time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toEndOf="@+id/sunday_start_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/saturday_end_edittext"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <!-- Buttons: Save/Load, Clear, and Delete -->
+    <Button
+        android:id="@+id/save_load_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="showPopupMenu"
+        android:text="@string/save_load_button_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sunday_textview"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="UsingOnClickInXml" />
+
+
+    <!-- TextView for Monday - Friday to display each day's name as a label. -->
+    <Button
+        android:id="@+id/clear_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/clear_button_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/save_load_button"
+        app:layout_constraintTop_toBottomOf="@+id/sunday_textview"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/delete_button_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintStart_toEndOf="@+id/clear_button"
+        app:layout_constraintTop_toBottomOf="@+id/sunday_textview"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <!-- Text labels for Monday - Sunday -->
+    <TextView
+        android:id="@+id/monday_textview"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="104dp"
+        android:text="@string/monday_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/tuesday_textview"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:layout_marginStart="16dp"
+        android:text="@string/tuesday_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monday_textview"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/wednesday_textview"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:layout_marginStart="16dp"
+        android:text="@string/wednesday_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tuesday_textview"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/thursday_textview"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:layout_marginStart="16dp"
+        android:text="@string/thursday_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wednesday_textview"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/friday_textview"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:layout_marginStart="16dp"
+        android:text="@string/friday_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thursday_textview"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/saturday_textview"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:layout_marginStart="16dp"
+        android:text="@string/saturday_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/friday_textview"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/sunday_textview"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
+        android:layout_marginStart="16dp"
+        android:text="@string/sunday_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saturday_textview"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginLeft="16dp" />
+
+
+    <!-- Text label for week -->
+    <TextView
+        android:id="@+id/date_textview"
+        android:layout_width="60dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="56dp"
+        android:text="@string/date_textview_label"
+        app:layout_constraintBottom_toTopOf="@+id/monday_textview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39"
+        android:layout_marginLeft="56dp" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

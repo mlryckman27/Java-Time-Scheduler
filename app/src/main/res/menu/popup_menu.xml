@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Load submenu with four slots for schedules -->
     <item android:id="@+id/load_menu_option"
         android:title="@string/load_menu_label">
         <menu>
@@ -15,6 +16,7 @@
         </menu>
     </item>
 
+    <!-- Save submenu with four slots for schedules -->
     <item android:id="@+id/save_menu_option"
         android:title="@string/save_menu_label">
         <menu>
