@@ -1,3 +1,10 @@
+/**
+ * Matt Ryckman
+ * SIE 508 - Summer 2021
+ * Final Project - Java Time Scheduler
+ * Due: July 29, 2021
+ */
+
 package com.example.javatimescheduler;
 
 import java.io.BufferedReader;
