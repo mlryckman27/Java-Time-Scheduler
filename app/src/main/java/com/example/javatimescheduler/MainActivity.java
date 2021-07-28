@@ -18,18 +18,6 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
-
-    /**
-     * TODO:
-     *
-     * 1. Fix view constraints so layout is viewable on any size screen without issues (e.g. buttons cut off, start/end times not aligned).
-     *      - Clear button doesn't appear if all three buttons are aligned horizontally at the bottom of the screen.
-     *
-     * 2. Add toasts to deleteButtonListener() method to tell user which schedule has been deleted.
-     *
-     */
-
-
     // A weekly schedule holding user's work times.
     private Schedule weeklySchedule;
 
@@ -38,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Setup start time views
+        // Setup start times
         Day mondayStart = findViewById(R.id.monday_start_edittext);
         Day tuesdayStart = findViewById(R.id.tuesday_start_edittext);
         Day wednesdayStart = findViewById(R.id.wednesday_start_edittext);
@@ -47,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         Day saturdayStart = findViewById(R.id.saturday_start_edittext);
         Day sundayStart = findViewById(R.id.sunday_start_edittext);
 
-        // Setup end time views
+        // Setup end times
         Day mondayEnd = findViewById(R.id.monday_end_edittext);
         Day tuesdayEnd = findViewById(R.id.tuesday_end_edittext);
         Day wednesdayEnd = findViewById(R.id.wednesday_end_edittext);
@@ -69,17 +57,12 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         clearButtonListener();
 
         // Listen for tap of delete button by user.
-        try {
-            deleteButtonListener();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        deleteButtonListener();
     }
 
 
     /**
-     *
-     * @param view
+     * Displays a popupmenu with two submenus for user tp select a schedule to save or load
      */
     public void showPopupMenu(View view) {
         PopupMenu popup = new PopupMenu(this, view);
@@ -149,9 +132,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     }
 
     /**
-     *
-     * @param item
-     * @return
+     * @param item: One of eight clickable Views among the save and load submenus
+     * @return false, if no items are clicked or user clicks outside the popupmenu context
      */
     @Override
     public boolean onMenuItemClick(MenuItem item) {
@@ -235,9 +217,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     }
 
     /**
-     *
-     * @param fileName
-     * @return
+     * @param fileName: "week1", "week2", "week3", or "week4"
+     * @return Start and end dates for the week to be saved to the save/load menu
      * @throws IOException
      */
     private String updatePopupMenuItem(String fileName) throws IOException {
@@ -259,7 +240,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     }
 
     /**
-     * POST: Clear week dates and each start/end time for the entire schedule.
+     * Calls Schedule's clearSchedule() method to clear currently loaded weeklySchedule.
+     * This does not delete the current weeklySchedule from the save/load menu.
      */
     private void clearButtonListener() {
         Button clearButton = findViewById(R.id.clear_button);
@@ -272,7 +254,11 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         });
     }
 
-    private void deleteButtonListener() throws FileNotFoundException{
+    /**
+     * Calls Schedule's clearSchedule() method, then calls saveSchedule() method to completely
+     * remove the current weekly schedule from the save/load menu.
+     */
+    private void deleteButtonListener() {
         Button deleteButton = findViewById(R.id.delete_button);
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -281,6 +267,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 try {
                     BufferedReader week1File = new BufferedReader(new FileReader(new File(getFilesDir(), "week1")));
                     if (week1File.readLine().equals(weeklySchedule.getWeek())) {
+                        Toast.makeText(v.getContext(), "Deleted " + weeklySchedule.getWeek() + " schedule", Toast.LENGTH_SHORT).show();
                         weeklySchedule.clearSchedule();
                         weeklySchedule.saveSchedule(getFilesDir(), "week1");
                     }
@@ -293,6 +280,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 try {
                     BufferedReader week2File = new BufferedReader(new FileReader(new File(getFilesDir(), "week2")));
                     if (week2File.readLine().equals(weeklySchedule.getWeek())) {
+                        Toast.makeText(v.getContext(), "Deleted " + weeklySchedule.getWeek() + " schedule", Toast.LENGTH_SHORT).show();
                         weeklySchedule.clearSchedule();
                         weeklySchedule.saveSchedule(getFilesDir(), "week2");
                     }
@@ -305,6 +293,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 try {
                     BufferedReader week3File = new BufferedReader(new FileReader(new File(getFilesDir(), "week3")));
                     if (week3File.readLine().equals(weeklySchedule.getWeek())) {
+                        Toast.makeText(v.getContext(), "Deleted " + weeklySchedule.getWeek() + " schedule", Toast.LENGTH_SHORT).show();
                         weeklySchedule.clearSchedule();
                         weeklySchedule.saveSchedule(getFilesDir(), "week3");
                     }
@@ -317,6 +306,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 try {
                     BufferedReader week4File = new BufferedReader(new FileReader(new File(getFilesDir(), "week4")));
                     if (week4File.readLine().equals(weeklySchedule.getWeek())) {
+                        Toast.makeText(v.getContext(), "Deleted " + weeklySchedule.getWeek() + " schedule", Toast.LENGTH_SHORT).show();
                         weeklySchedule.clearSchedule();
                         weeklySchedule.saveSchedule(getFilesDir(), "week4");
                     }

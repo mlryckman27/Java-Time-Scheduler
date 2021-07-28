@@ -19,7 +19,7 @@
     <string name="end_textview_label">End</string>
     <string name="date_textview_label">Week</string>
 
-    <!-- Hints -->
+    <!-- Hints for start/end times and week dates -->
     <string name="start_hint">Start</string>
     <string name="end_hint">End</string>
     <string name="date_hint"><font size="12">MM/DD/YYYY-MM/DD/YYYY</font></string>
