@@ -8,7 +8,7 @@
 
 
     <!-- Date EditText View to hold the dates for current schedule. -->
-    <com.example.javatimescheduler.Date
+    <com.javatimescheduler.Date
         android:id="@+id/date_edittext"
         android:layout_width="wrap_content"
         android:layout_height="40sp"
@@ -26,7 +26,7 @@
 
     <!-- Monday - Sunday start/end time EditText Views. -->
 
-    <com.example.javatimescheduler.Day
+    <com.javatimescheduler.Day
         android:id="@+id/monday_start_edittext"
         android:layout_width="100dp"
         android:layout_height="40sp"
@@ -36,7 +36,7 @@
         app:layout_constraintStart_toEndOf="@+id/monday_textview"
         app:layout_constraintTop_toBottomOf="@+id/date_textview" />
 
-    <com.example.javatimescheduler.Day
+    <com.javatimescheduler.Day
         android:id="@+id/monday_end_edittext"
         android:layout_width="100dp"
         android:layout_height="40sp"
@@ -48,7 +48,7 @@
         app:layout_constraintStart_toEndOf="@+id/timedash1"
         app:layout_constraintTop_toBottomOf="@+id/date_textview" />
 
-    <com.example.javatimescheduler.Day
+    <com.javatimescheduler.Day
         android:id="@+id/tuesday_start_edittext"
         android:layout_width="100dp"
         android:layout_height="40sp"
@@ -57,7 +57,7 @@
         app:layout_constraintStart_toEndOf="@+id/tuesday_textview"
         app:layout_constraintTop_toBottomOf="@+id/monday_start_edittext" />
 
-    <com.example.javatimescheduler.Day
+    <com.javatimescheduler.Day
         android:id="@+id/tuesday_end_edittext"
         android:layout_width="100dp"
         android:layout_height="40sp"
@@ -68,7 +68,7 @@
         app:layout_constraintStart_toEndOf="@+id/timedash2"
         app:layout_constraintTop_toBottomOf="@+id/monday_end_edittext" />
 
-    <com.example.javatimescheduler.Day
+    <com.javatimescheduler.Day
         android:id="@+id/wednesday_start_edittext"
         android:layout_width="100dp"
         android:layout_height="40sp"
@@ -77,7 +77,7 @@
         app:layout_constraintStart_toEndOf="@+id/wednesday_textview"
         app:layout_constraintTop_toBottomOf="@+id/tuesday_start_edittext" />
 
-    <com.example.javatimescheduler.Day
+    <com.javatimescheduler.Day
         android:id="@+id/wednesday_end_edittext"
         android:layout_width="100dp"
         android:layout_height="40sp"
@@ -88,7 +88,7 @@
         app:layout_constraintStart_toEndOf="@+id/timedash3"
         app:layout_constraintTop_toBottomOf="@+id/tuesday_end_edittext" />
 
-    <com.example.javatimescheduler.Day
+    <com.javatimescheduler.Day
         android:id="@+id/thursday_start_edittext"
         android:layout_width="100dp"
         android:layout_height="40sp"
@@ -97,7 +97,7 @@
         app:layout_constraintStart_toEndOf="@+id/thursday_textview"
         app:layout_constraintTop_toBottomOf="@+id/wednesday_start_edittext" />
 
-    <com.example.javatimescheduler.Day
+    <com.javatimescheduler.Day
         android:id="@+id/thursday_end_edittext"
         android:layout_width="100dp"
         android:layout_height="40sp"
@@ -108,7 +108,7 @@
         app:layout_constraintStart_toEndOf="@+id/timedash4"
         app:layout_constraintTop_toBottomOf="@+id/wednesday_end_edittext" />
 
-    <com.example.javatimescheduler.Day
+    <com.javatimescheduler.Day
         android:id="@+id/friday_start_edittext"
         android:layout_width="100dp"
         android:layout_height="40sp"
@@ -117,7 +117,7 @@
         app:layout_constraintStart_toEndOf="@+id/friday_textview"
         app:layout_constraintTop_toBottomOf="@+id/thursday_start_edittext" />
 
-    <com.example.javatimescheduler.Day
+    <com.javatimescheduler.Day
         android:id="@+id/friday_end_edittext"
         android:layout_width="100dp"
         android:layout_height="40sp"
@@ -128,7 +128,7 @@
         app:layout_constraintStart_toEndOf="@+id/timedash5"
         app:layout_constraintTop_toBottomOf="@+id/thursday_end_edittext" />
 
-    <com.example.javatimescheduler.Day
+    <com.javatimescheduler.Day
         android:id="@+id/saturday_start_edittext"
         android:layout_width="100dp"
         android:layout_height="40sp"
@@ -137,7 +137,7 @@
         app:layout_constraintStart_toEndOf="@+id/saturday_textview"
         app:layout_constraintTop_toBottomOf="@+id/friday_start_edittext" />
 
-    <com.example.javatimescheduler.Day
+    <com.javatimescheduler.Day
         android:id="@+id/saturday_end_edittext"
         android:layout_width="100dp"
         android:layout_height="40sp"
@@ -150,7 +150,7 @@
 
 
     <!-- Buttons: Save/Load, Clear, and Delete -->
-    <com.example.javatimescheduler.Day
+    <com.javatimescheduler.Day
         android:id="@+id/sunday_start_edittext"
         android:layout_width="100dp"
         android:layout_height="40sp"
@@ -161,7 +161,7 @@
         app:layout_constraintTop_toBottomOf="@+id/saturday_start_edittext"
         app:layout_constraintVertical_bias="0.0" />
 
-    <com.example.javatimescheduler.Day
+    <com.javatimescheduler.Day
         android:id="@+id/sunday_end_edittext"
         android:layout_width="100dp"
         android:layout_height="40sp"
