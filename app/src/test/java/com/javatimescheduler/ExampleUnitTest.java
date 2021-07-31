@@ -1,4 +1,4 @@
-package com.example.javatimescheduler;
+package com.javatimescheduler;
 
 import org.junit.Test;
 

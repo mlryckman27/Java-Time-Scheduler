@@ -1,4 +1,4 @@
-package com.example.javatimescheduler;
+package com.javatimescheduler;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

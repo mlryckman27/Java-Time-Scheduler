@@ -1,4 +1,4 @@
-package com.example.javatimescheduler;
+package com.javatimescheduler;
 
 import android.content.Context;
 import android.util.AttributeSet;
