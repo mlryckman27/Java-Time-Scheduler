@@ -168,7 +168,6 @@
         android:layout_width="100dp"
         android:layout_height="40sp"
         android:hint="@string/start_hint"
-        android:hintTextColor="#757575"
         android:inputType="time"
         app:layout_constraintBottom_toTopOf="@+id/save_load_button"
         app:layout_constraintStart_toEndOf="@+id/sunday_textview"
