@@ -17,7 +17,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
-
+    
     // A weekly schedule holding user's work times.
     private Schedule weeklySchedule;
 
