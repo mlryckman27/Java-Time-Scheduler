@@ -319,4 +319,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         });
     }
 
+    /**
+     * TODO:
+     *
+     * 1. Fix keyboard layout issue some phones are currently experiencing.
+     *      e.g. keyboard layout is supposed to be set to time entry, but instead shows full standard keyboard.
+     *
+     * 2. Update app to version 1.2 and release on Google Play Store after completing all changes.
+     */
+
 }
+
