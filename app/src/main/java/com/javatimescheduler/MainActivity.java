@@ -1,6 +1,7 @@
 package com.javatimescheduler;
 
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -46,6 +47,16 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         Day[] dayStart = {mondayStart, tuesdayStart, wednesdayStart, thursdayStart, fridayStart, saturdayStart, sundayStart};
         Day[] dayEnd = {mondayEnd, tuesdayEnd, wednesdayEnd, thursdayEnd, fridayEnd, saturdayEnd, sundayEnd};
+
+        for (int i = 0; i < dayStart.length; i++) {
+            dayStart[i].setRawInputType(InputType.TYPE_CLASS_TEXT);
+            dayStart[i].setTextIsSelectable(true);
+        }
+
+        for (int i = 0; i < dayEnd.length; i++) {
+            dayEnd[i].setRawInputType(InputType.TYPE_CLASS_TEXT);
+            dayEnd[i].setTextIsSelectable(true);
+        }
 
         // Start/end dates for the work schedule
         Date scheduleDates = findViewById(R.id.date_edittext);
