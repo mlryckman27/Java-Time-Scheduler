@@ -1,4 +1,4 @@
-build/*
+build/
 release/*.aab
 debug/*.aab
 release/*.apk
