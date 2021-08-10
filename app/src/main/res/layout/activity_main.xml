@@ -10,7 +10,7 @@
     <!-- Date EditText View to hold the dates for current schedule. -->
     <com.javatimescheduler.Date
         android:id="@+id/date_edittext"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginTop="32dp"
         android:ems="10"
@@ -18,8 +18,6 @@
         android:importantForAutofill="no"
         android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/monday_start_edittext"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/date_textview"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -29,8 +27,8 @@
 
     <com.javatimescheduler.Day
         android:id="@+id/monday_start_edittext"
-        android:layout_width="100dp"
-        android:layout_height="40sp"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
         android:layout_marginTop="48dp"
         android:hint="@string/start_hint"
         android:inputType="time"
@@ -40,20 +38,18 @@
 
     <com.javatimescheduler.Day
         android:id="@+id/monday_end_edittext"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginTop="48dp"
         android:hint="@string/end_hint"
         android:inputType="time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toEndOf="@+id/timedash1"
         app:layout_constraintTop_toBottomOf="@+id/date_textview"
         tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,TextContrastCheck" />
 
     <com.javatimescheduler.Day
         android:id="@+id/tuesday_start_edittext"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:hint="@string/start_hint"
         android:inputType="time"
@@ -63,19 +59,17 @@
 
     <com.javatimescheduler.Day
         android:id="@+id/tuesday_end_edittext"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:hint="@string/end_hint"
         android:inputType="time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toEndOf="@+id/timedash2"
         app:layout_constraintTop_toBottomOf="@+id/monday_end_edittext"
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <com.javatimescheduler.Day
         android:id="@+id/wednesday_start_edittext"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:hint="@string/start_hint"
         android:inputType="time"
@@ -85,19 +79,17 @@
 
     <com.javatimescheduler.Day
         android:id="@+id/wednesday_end_edittext"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:hint="@string/end_hint"
         android:inputType="time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toEndOf="@+id/timedash3"
         app:layout_constraintTop_toBottomOf="@+id/tuesday_end_edittext"
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <com.javatimescheduler.Day
         android:id="@+id/thursday_start_edittext"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:hint="@string/start_hint"
         android:inputType="time"
@@ -107,19 +99,17 @@
 
     <com.javatimescheduler.Day
         android:id="@+id/thursday_end_edittext"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:hint="@string/end_hint"
         android:inputType="time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toEndOf="@+id/timedash4"
         app:layout_constraintTop_toBottomOf="@+id/wednesday_end_edittext"
         tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
 
     <com.javatimescheduler.Day
         android:id="@+id/friday_start_edittext"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:hint="@string/start_hint"
         android:inputType="time"
@@ -129,19 +119,17 @@
 
     <com.javatimescheduler.Day
         android:id="@+id/friday_end_edittext"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:hint="@string/end_hint"
         android:inputType="time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toEndOf="@+id/timedash5"
         app:layout_constraintTop_toBottomOf="@+id/thursday_end_edittext"
         tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
 
     <com.javatimescheduler.Day
         android:id="@+id/saturday_start_edittext"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:hint="@string/start_hint"
         android:inputType="time"
@@ -151,12 +139,10 @@
 
     <com.javatimescheduler.Day
         android:id="@+id/saturday_end_edittext"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:hint="@string/end_hint"
         android:inputType="time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toEndOf="@+id/timedash6"
         app:layout_constraintTop_toBottomOf="@+id/friday_end_edittext"
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
@@ -165,7 +151,7 @@
     <!-- Buttons: Save/Load, Clear, and Delete -->
     <com.javatimescheduler.Day
         android:id="@+id/sunday_start_edittext"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:hint="@string/start_hint"
         android:inputType="time"
@@ -177,24 +163,24 @@
 
     <com.javatimescheduler.Day
         android:id="@+id/sunday_end_edittext"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:hint="@string/end_hint"
         android:inputType="time"
         app:layout_constraintBottom_toTopOf="@+id/save_load_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toEndOf="@+id/ttmedash7"
         app:layout_constraintTop_toBottomOf="@+id/saturday_end_edittext"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
+
+    <!-- TextView for Monday - Friday to display each day's name as a label. -->
     <Button
         android:id="@+id/save_load_button"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
         android:layout_marginBottom="16dp"
         android:onClick="showPopupMenu"
         android:text="@string/save_load_button_label"
@@ -203,13 +189,14 @@
         tools:ignore="UsingOnClickInXml" />
 
 
-    <!-- TextView for Monday - Friday to display each day's name as a label. -->
+    <!-- Text labels for Monday - Sunday -->
+
     <Button
         android:id="@+id/clear_button"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
         android:layout_marginBottom="16dp"
         android:text="@string/clear_button_label"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -217,21 +204,18 @@
 
     <Button
         android:id="@+id/delete_button"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginBottom="16dp"
         android:text="@string/delete_button_label"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toEndOf="@+id/clear_button" />
-
-
-    <!-- Text labels for Monday - Sunday -->
 
     <TextView
         android:id="@+id/monday_textview"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
@@ -242,7 +226,7 @@
 
     <TextView
         android:id="@+id/tuesday_textview"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginStart="16dp"
         android:text="@string/tuesday_label"
@@ -252,7 +236,7 @@
 
     <TextView
         android:id="@+id/wednesday_textview"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginStart="16dp"
         android:text="@string/wednesday_label"
@@ -262,7 +246,7 @@
 
     <TextView
         android:id="@+id/thursday_textview"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginStart="16dp"
         android:text="@string/thursday_label"
@@ -272,7 +256,7 @@
 
     <TextView
         android:id="@+id/friday_textview"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginStart="16dp"
         android:text="@string/friday_label"
@@ -282,7 +266,7 @@
 
     <TextView
         android:id="@+id/saturday_textview"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginStart="16dp"
         android:text="@string/saturday_label"
@@ -295,7 +279,7 @@
 
     <TextView
         android:id="@+id/sunday_textview"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
@@ -307,7 +291,7 @@
 
     <TextView
         android:id="@+id/date_textview"
-        android:layout_width="60dp"
+        android:layout_width="0dp"
         android:layout_height="22dp"
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
@@ -318,7 +302,7 @@
 
     <TextView
         android:id="@+id/timedash1"
-        android:layout_width="25dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
@@ -329,7 +313,7 @@
 
     <TextView
         android:id="@+id/timedash2"
-        android:layout_width="25dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
@@ -339,7 +323,7 @@
 
     <TextView
         android:id="@+id/timedash3"
-        android:layout_width="25dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
@@ -349,7 +333,7 @@
 
     <TextView
         android:id="@+id/timedash4"
-        android:layout_width="25dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
@@ -359,7 +343,7 @@
 
     <TextView
         android:id="@+id/timedash5"
-        android:layout_width="25dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
@@ -369,7 +353,7 @@
 
     <TextView
         android:id="@+id/timedash6"
-        android:layout_width="25dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
@@ -379,7 +363,7 @@
 
     <TextView
         android:id="@+id/ttmedash7"
-        android:layout_width="25dp"
+        android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"

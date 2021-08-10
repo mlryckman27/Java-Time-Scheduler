@@ -60,6 +60,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         // Start/end dates for the work schedule
         Date scheduleDates = findViewById(R.id.date_edittext);
+
+        // Forces specified keyboard to take precedence over system keyboard.
+        // Some users must enable GBoard from system settings for keyboard to work.
         scheduleDates.setRawInputType(InputType.TYPE_CLASS_DATETIME);
         scheduleDates.setTextIsSelectable(true);
 
@@ -335,10 +338,10 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     /**
      * TODO:
      *
-     * 1. Fix keyboard layout issue some phones are currently experiencing.
-     *      e.g. keyboard layout is supposed to be set to time entry, but instead shows full standard keyboard.
-     *
-     * 2. Update app to version 1.2 and release on Google Play Store after completing all changes.
+     * 1. Fix layout issues and redesign layout.
+     *      - widths should be 0dp
+     *      - heights should be 0dp
+     *      - all fields should be appropriately spaced and aligned in uniform columns
      */
 
 }
